@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -27,33 +31,41 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+          
           <a class="navbar-brand">LIBRERIA ONLINE BRAVO</a>
             
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-brand" role="form">
-            
-            <input type="button" value="INICIO" class="btn btn-success" onClick="location.href='index.php'"/>
-            <input type="button" value="LOS MÁS VENDIDOS" class="btn btn-success" onClick="location.href='vendidos.php'"/>
-            <input type="button" value="CATÁLOGO" class="btn btn-success" onClick="location.href='catalogo.php'"/>
-            <input type="button" value="GÉNERO" class="btn btn-success" onClick="location.href='genero.php'"/>
-          </form>
-        </div><!--/.navbar-collapse -->
+       
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
-            
-            <input type="button" value="Inicar sesión" class="btn btn-success" onClick="location.href='login.php'"/>
-            <input type="button" value="Registro" class="btn btn-success" onClick="location.href='registre.php'"/>
+      
+            <input type="button" value="Hola " class="btn btn-success" />
+            <input type="button" value="Cerrar sesión" class="btn btn-success" onClick="location.href='cerrar_session.php'"/>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
+        
+       <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Bienvenido a la librería online Bravo</h1>
+        <p>En este lugar podrá encontrar multitud de libros que puede comprar. Continuamente añadimos novedades. Visítenos con frecuencia para sus compras.</p>
+        
+      </div>
+    </div>  
+    var_dump ($_SESSION);
+          
+         if (isset($_SESSION["user"]) && $_SESSION["tipo_usu"]=="A") {
+             header ('Location:validar.php');
+         }else {
+                header ('Location:index.php');
+         }    
+
+<?php
+    include ('formato/pie.php');
+?>  

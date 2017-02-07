@@ -1,6 +1,4 @@
-<?php
-    include ('cabecera/cabecera.php');
-?>
+
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
@@ -11,11 +9,30 @@
 
 
 
-      <?php if (!isset($_POST["dni"])) : ?>
+      <?php
+		if (!isset($_POST["usu"])) : ?>
+
+        <form method="post">
+          <fieldset>
+            <legend>REGISTRO DE USUARIO</legend>
+            <span>Nombre de usuario: </span><input type="text" name="usu" required><br>
+            <span>Password: </span><input type="text" name="pass" required><br>
+            <span>Nombre: </span><input type="text" name="name" required><br>
+            <span>Apellidos: </span><input type="text" name="apell" required><br>
+            <span>Direccion: </span><input type="text" name="dire" required><br>
+            <span>C.P: </span><input type="number" name="cp" required><br>
+            <span>Localidad: </span><input type="text" name="loca" required><br>
+            <span>Provincia: </span><input type="text" name="provi" required><br>
+            <span>TLF: </span><input type="number" name="tlf" required><br>
+            <span>Email: </span><input type="text" name="email" required><br>
+            <span><input type="submit" value="Registrar" ><span><input type="reset" value="Borrar" >
+                  
+          </fieldset>
+        </form>
+        <?php else: ?>
+    
 
         <?php
-          $dni =$_GET['id'];
-
         //CREATING THE CONNECTION
         $connection = new mysqli("localhost", "admin", "12345", "proyecto");
 
@@ -25,86 +42,19 @@
             exit();
         }
 
-        //MAKING A SELECT QUERY
-        /* Consultas de selección que devuelven un conjunto de resultados */
-          $query="SELECT * FROM usuarios
-            WHERE nom_usu='$dni'";
+        
+        $insert="INSERT INTO usuarios VALUES ('".$_POST['usu']."',md5('".$_POST['pass']."'),'".$_POST['name']."','".$_POST['apell']."','".$_POST['dire']."','".$_POST['cp']."','".$_POST['loca']."','".$_POST['provi']."','".$_POST['tlf']."','".$_POST['email']."','C')";
 
-        if ($result = $connection->query($query)) {
-
-            $obj = $result->fetch_object();
-
-            $codigo =$obj->CodCliente;
-            $name = $obj->Nombre;
-            $apellidos = $obj->Apellidos;
-            $direccion = $obj->Direccion;
-            $telefono = $obj->Telefono;
-
-
-        }
-
-
-
+   
+     $result = $connection->query($insert);
+  	        if (!$result) {
+   		         echo "Query Error";
+            } else {
+              echo "Nuevo usuario añadido";
+            }
+    
         ?>
-
-        <form method="post">
-          <fieldset>
-            <legend>Personal Info</legend>
-            <span>DNI:</span><input type="text" name="dni" value="<?php echo $dni; ?>"required><br>
-            <span>Last Name:</span><input type="text" name="lastname" value="<?php echo $apellidos; ?>" required><br>
-            <span>Name:</span><input type="text" name="name" required value="<?php echo $name; ?>"><br>
-            <span>Address:</span><input type="text" name="address" value="<?php echo $direccion; ?>"><br>
-            <span>Phone: </span><input type="text" name="phone" value="<?php echo $telefono; ?>"><br>
-              <span><input type="hidden" name="codigo"  value="<?php echo $codigo; ?>"
-            <span><input type="submit" value="Editar" >
-          </fieldset>
-        </form>
-
-      <!-- DATA IN $_POST['mail']. Coming from a form submit -->
-      <?php else: ?>
-
-        <?php
-        //CREATING THE CONNECTION
-        $connection = new mysqli("localhost", "tf", "12345", "tf");
-
-        //TESTING IF THE CONNECTION WAS RIGHT
-        if ($connection->connect_errno) {
-            printf("Connection failed: %s\n", $connection->connect_error);
-            exit();
-        }
-
-        //MAKING A UPDATE
-        $codigo=$_POST['codigo'];
-        $nombre=$_POST['name'];
-        $apellidos=$_POST['lastname'];
-        $direccion=$_POST['address'];
-        $telefono=$_POST['phone'];
-        $dni=$_POST['dni'];
-
-
-        $query="Update clientes SET nombre='$nombre',
-        apellidos='$apellidos',
-        direccion='$direccion',
-        telefono='$telefono',
-        dni='$dni'
-        WHERE codcliente='$codigo'";
-
-        $result = $connection->query($query);
-        if (!$result) {
-
-            echo "WRONG QUERY";
-        }
-
-
-        ?>
-
-      <?php endif ?>
-
-  </body>
-</html>
-      </div>
-    </div>
-
+       <?php endif ?> 
 <?php
-    include ('pie/pie.php');
+    include ('formato/pie.php');
 ?>  

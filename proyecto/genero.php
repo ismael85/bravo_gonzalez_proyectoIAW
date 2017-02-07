@@ -1,5 +1,5 @@
 <?php
-    include ('cabecera/cabecera.php');
+    include ('formato/cabecera.php');
 ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -11,5 +11,5 @@
     </div>
 
 <?php
-    include ('pie/pie.php');
+    include ('formato/pie.php');
 ?>  

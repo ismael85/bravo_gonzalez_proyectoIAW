@@ -1,9 +1,7 @@
 <?php
   session_start();
 ?>
-<?php
-    include ('cabecera/cabecera.php');
-?>
+
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
@@ -29,21 +27,25 @@
               if ($result->num_rows===0) {
                 echo "LOGIN INVALIDO";
               } else {
+                $obj =$result->fetch_object ();
                 //VALID LOGIN. SETTING SESSION VARS
-                $_SESSION["user"]=$_POST["user"];
+                $_SESSION["nom_usu"]=$_POST["user"];
+                $_SESSION["tipo_usu"]=$obj->tipo;
                 $_SESSION["language"]="es";
-                header("Location: INDEX.PHP");
+                header("Location:validar.php");
               }
           } else {
             echo "Wrong Query";
           }
       }
-    ?>
+         
+    ?>   
+          
 
-    <form action="login.php" method="post">
-    <legend>Usuario</legend>
-      <p>Usuario:<input name="user" required></p>
-      <p>Contraseña:<input name="password" type="password" required></p>
+    <form action="validar.php" method="post">
+    <legend>Login de usuario</legend>
+      <p>Usuario: <input name="user" required></p>
+      <p>Contraseña: <input name="password" type="password" required></p>
       <p><input type="submit" value="ENVIAR"></p>
 
     </form>
@@ -51,12 +53,7 @@
       </div>
     </div>
 
-<?php
-    include ('pie/pie.php');
-?>  >
 
     
 
 
-  </body>
-</html>
