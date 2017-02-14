@@ -39,14 +39,13 @@
               
                 echo "<div class='col-md-4'>";
                 echo "<form class='navbar-form navbar-right' role='form'>";
-                
-                echo "<h4><b><a href='detalle_producto.php?titulo=".$obj->TITULO."'>$obj->TITULO</a></b></h4>";
+                echo "<h4><b><a href='detalle_producto.php?isbn=".$obj->ISBN."'>$obj->TITULO</a></b></h4>";   
                 echo "<p>$obj->AUTOR</p>";
                 echo "<img src='".$obj->IMG."' width='250px' height='250px'>";
                 echo "<p>$obj->PRECIO €</p>";
               
               
-              echo "<input type='button' value='Añadir al carrito' class='btn btn-success' onClick='location.href='carrito.php'/>";
+              echo "<input type='button' value='Añadir al carrito' onClick='location.href='carrito.php'/>";
               
               echo "</form>";
               

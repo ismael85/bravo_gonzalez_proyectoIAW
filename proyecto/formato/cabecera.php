@@ -24,9 +24,7 @@
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -36,19 +34,27 @@
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-brand" role="form">
             
-            <input type="button" value="INICIO" class="btn btn-success" onClick="location.href='index.php'"/>
-            <input type="button" value="LOS MÁS VENDIDOS" class="btn btn-success" onClick="location.href='vendidos.php'"/>
-            <input type="button" value="CATÁLOGO" class="btn btn-success" onClick="location.href='catalogo.php'"/>
-            <input type="button" value="GÉNERO" class="btn btn-success" onClick="location.href='genero.php'"/>
+            <input type="button" value="INICIO"  onClick="location.href='index.php'"/>
+            <input type="button" value="LOS MÁS VENDIDOS"  onClick="location.href='vendidos.php'"/>
+            <input type="button" value="CATÁLOGO"  onClick="location.href='catalogo.php'"/>
+            <input type="button" value="GÉNEROS"  onClick="location.href='genero.php'"/>
+     
+        
+      
+               
           </form>
         </div><!--/.navbar-collapse -->
         </div>
+          
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             
-            <input type="button" value="Inicar sesión" class="btn btn-success" onClick="location.href='login.php'"/>
-            <input type="button" value="Registro" class="btn btn-success" onClick="location.href='registre.php'"/>
+            <input type="button" value="Inicar sesión" onClick="location.href='login.php'"/>
+            <input type="button" value="Registro" onClick="location.href='registre.php'"/>
           </form>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
+        
+        
+  
