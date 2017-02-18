@@ -2,16 +2,8 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        
-      <!-- PHP STRUCTURE FOR CONDITIONAL HTML -->
-      <!-- FIRST TIME. NO DATA IN THE POST (checking a required form field) -->
-      <!-- So we must show the form -->
-
-
-
       <?php
 		if (!isset($_POST["usu"])) : ?>
-
         <form method="post">
           <fieldset>
             <legend>REGISTRO DE USUARIO</legend>
@@ -25,24 +17,18 @@
             <span>Provincia: </span><input type="text" name="provi" required><br>
             <span>TLF: </span><input type="number" name="tlf" required><br>
             <span>Email: </span><input type="text" name="email" required><br>
-            <span><input type="submit" value="Registrar" ><span><input type="reset" value="Borrar" >
-                  
+            <span><input type="submit" value="Registrar" ><span><input type="reset" value="Borrar" >            
           </fieldset>
         </form>
         <?php else: ?>
-    
-
         <?php
         //CREATING THE CONNECTION
         $connection = new mysqli("localhost", "admin", "12345", "proyecto");
-
         //TESTING IF THE CONNECTION WAS RIGHT
         if ($connection->connect_errno) {
             printf("Connection failed: %s\n", $connection->connect_error);
             exit();
         }
-
-        
         $insert="INSERT INTO usuarios VALUES ('".$_POST['usu']."',md5('".$_POST['pass']."'),'".$_POST['name']."','".$_POST['apell']."','".$_POST['dire']."','".$_POST['cp']."','".$_POST['loca']."','".$_POST['provi']."','".$_POST['tlf']."','".$_POST['email']."','C')";
 
    

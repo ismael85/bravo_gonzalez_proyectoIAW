@@ -1,8 +1,8 @@
+<?php
+  session_start();
+?>
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<html class="no-js" lang=""> 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,7 +10,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <style>
             body {
@@ -22,39 +21,40 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+       
     </head>
     <body>
         
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          
-          <a class="navbar-brand">LIBRERIA ONLINE BRAVO</a>
-            
+          <a class="navbar-brand">LIBRERIA ONLINE BRAVO</a> 
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-brand" role="form">
-            
             <input type="button" value="INICIO"  onClick="location.href='index.php'"/>
-            <input type="button" value="LOS MÁS VENDIDOS"  onClick="location.href='vendidos.php'"/>
+            <input type="button" value="LOS 10 MÁS VENDIDOS"  onClick="location.href='vendidos.php'"/>
             <input type="button" value="CATÁLOGO"  onClick="location.href='catalogo.php'"/>
-            <input type="button" value="GÉNEROS"  onClick="location.href='genero.php'"/>
-     
-        
-      
-               
+            <input type="button" value="GÉNEROS"  onClick="location.href='genero.php'"/>       
           </form>
         </div><!--/.navbar-collapse -->
-        </div>
-          
+        </div>          
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
-            
-            <input type="button" value="Inicar sesión" onClick="location.href='login.php'"/>
-            <input type="button" value="Registro" onClick="location.href='registre.php'"/>
-          </form>
+            <?php
+              if (!isset($_SESSION["nom_usu"])) {//Si no a iniciado sesión ningún usuario que aparezca el botón iniciar sesión
+                  echo "<a href='login.php'><input type='button' value='INICIAR SESIÓN'/></a>";          
+               }                                                                 
+               else {
+                    echo "<input type='button' value='BIENVENIDO {$_SESSION['nom_usu']}'/>";
+               }
+            ?>  
+              <input type="button" value="DESCONECTAR" onclick="location.href='cerrar_session.php'"/>
+           </form>
+        </div>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
         
         
+             
   

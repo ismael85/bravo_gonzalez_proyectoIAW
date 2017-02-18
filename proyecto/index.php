@@ -1,66 +1,50 @@
 
 <?php
-    include ('formato/cabecera.php');
+    include ('formato/cabecera.php');//Introduce el contenido de esta pagina en index.php
 ?>
-    <!-- Main jumbotron for a primary marketing message or call to action -->
+    
     <div class="jumbotron">
-      <div class="container">
-          <h2><b>Bienvenido a la librería online Bravo</b></h2>
+      <div class="container"><!--Todo el contenido de la tabla esta dentro de este contenedor--> 
+        <h2><b>Bienvenido a la librería online Bravo</b></h2>
         <p>En este lugar podrá encontrar multitud de libros que puede comprar. Continuamente añadimos novedades. Visítenos con frecuencia para sus compras.</p>
-        <h2 align="center"><b>NOVEDADES</b></h2>
-          <!-- Example row of columns -->
-     <div class="row">
-        
-                 
-           <?php
-      //CREATING THE CONNECTION
-      $connection = new mysqli("localhost", "admin", "12345", "proyecto");
-      $connection->set_charset("uft8");
-      //TESTING IF THE CONNECTION WAS RIGHT
-      if ($connection->connect_errno) {
-          printf("Connection failed: %s\n", $connection->connect_error);
-          exit();
-      }
-      //MAKING A SELECT QUERY
-      /* Consultas de selección que devuelven un conjunto de resultados */
-        $query="SELECT * FROM libros WHERE FECHA_LANZA > '2017-01-01'";
-      if ($result = $connection->query($query)) {
-          
-          ?>
-          
-          
-          
+        <h2 align="center"><b>NOVEDADES</b></h2>  
+        <div class="row">           
+            <?php
+                //CREATING THE CONNECTION
+                $connection = new mysqli("localhost", "admin", "12345", "proyecto");
+                $connection->set_charset("uft8");
+                //TESTING IF THE CONNECTION WAS RIGHT
+                    if ($connection->connect_errno) {
+                        printf("Connection failed: %s\n", $connection->connect_error);
+                        exit();
+                    }
 
-      <?php
-          //FETCHING OBJECTS FROM THE RESULT SET
-          //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
-          while($obj = $result->fetch_object()) {
-              //PRINTING EACH ROW
-              
-                echo "<div class='col-md-4'>";
-                echo "<form class='navbar-form navbar-right' role='form'>";
-                echo "<h4><b><a href='detalle_producto.php?isbn=".$obj->ISBN."'>$obj->TITULO</a></b></h4>";   
-                echo "<p>$obj->AUTOR</p>";
-                echo "<img src='".$obj->IMG."' width='250px' height='250px'>";
-                echo "<p>$obj->PRECIO €</p>";
-              
-              
-              echo "<input type='button' value='Añadir al carrito' onClick='location.href='carrito.php'/>";
-              
-              echo "</form>";
-              
-                echo "</div>";
-               
-          }
-          //Free the result. Avoid High Memory Usages
-          $result->close();
-          unset($obj);
-          unset($connection);
-      } //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
-    ?>
-  </div>
-  </div>
+                /* Consulta que devuelve los libros más nuevos desde comienzos de año */
+                $query="SELECT * FROM libros WHERE FECHA_LANZA > '2017-01-01'";
+                    if ($result = $connection->query($query)) {
+            ?>
+            <?php
+                  //Hacemos un bucle para saque todos los datos de la consulta
+                  while($obj = $result->fetch_object()) {
+                    echo "<div class='col-md-4'>";
+                        echo "<form class='navbar-form navbar-right' role='form'>";
+                         echo "<h4><b><a href='detalle_producto.php?isbn=".$obj->ISBN."'>$obj->TITULO</a></b></h4>";   
+                         echo "<p>$obj->AUTOR</p>";
+                         echo "<img src='".$obj->IMG."' width='250px' height='250px'>";
+                         echo "<p>$obj->PRECIO €</p>";
+                         echo "<input type='button' value='Añadir al carrito' onClick='location.href='carrito.php'/>";
+                        echo "</form>";
+                    echo "</div>";
 
-   </div>
+                  }
+              //Free the result. Avoid High Memory Usages
+              $result->close();
+              unset($obj);
+              unset($connection);
+                    } //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
+            ?>
+    </div><!--Cierre del class row-->
+  </div><!--Cierre del contenedor-->
+</div><!--Cierre del class jumbotron-->
 
  
