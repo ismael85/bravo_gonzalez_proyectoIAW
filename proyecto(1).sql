@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-02-2017 a las 19:01:44
+-- Tiempo de generación: 23-02-2017 a las 09:10:57
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.6.24
 
@@ -145,7 +145,7 @@ INSERT INTO `libros` (`ISBN`, `TITULO`, `SINOPSIS`, `AUTOR`, `EDITORIAL`, `PRECI
 --
 
 CREATE TABLE `pedidos` (
-  `ID_PEDIDOS` int(10) UNSIGNED NOT NULL,
+  `ID_PEDIDOS` int(10) NOT NULL,
   `FECH_PED` date DEFAULT NULL,
   `FECH_ENTR` date DEFAULT NULL,
   `NOM_USU` varchar(15) NOT NULL
@@ -156,12 +156,12 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`ID_PEDIDOS`, `FECH_PED`, `FECH_ENTR`, `NOM_USU`) VALUES
-(1, '2017-01-18', '2017-01-21', 'DIEGO15'),
-(2, '2017-01-15', '2017-01-19', 'DIEGO15'),
+(1, '2017-01-09', '2017-01-13', 'DIEGO15'),
+(2, '2017-01-12', '2017-01-15', 'DIEGO15'),
 (3, '2017-01-14', '2017-01-18', 'ISMA85'),
 (4, '2017-01-16', '2017-01-19', 'JUANLUS'),
-(5, '2017-01-14', '2017-01-18', 'RICARD12'),
-(6, '2017-01-15', '2017-01-19', 'ROBERT');
+(5, '2017-01-18', '2017-01-21', 'RICARD12'),
+(6, '2017-01-18', '2017-01-21', 'ROBERT');
 
 -- --------------------------------------------------------
 
@@ -191,6 +191,9 @@ INSERT INTO `usuarios` (`NOM_USU`, `PASSWORD`, `NOMBRE`, `APELLIDOS`, `DIRECCION
 ('ADMIN', '81dc9bdb52d04dc20036dbd8313ed055', 'ADMINISTRADOR', 'ADMIN', 'DESCONOCIDA', 41010, 'SEVILLA', 'SEVILLA', '954798989', 'ADMIN@LIBRERIA.COM', 'A'),
 ('DIEGO15', '81dc9bdb52d04dc20036dbd8313ed055', 'DIEGO', 'LEON LINARES', 'C/ESPERANZA DE TRIANA', 41010, 'SEVILLA', 'SEVILLA', '656474896', 'DIE23@YAHOO.ES', 'C'),
 ('ISMA85', '81dc9bdb52d04dc20036dbd8313ed055', 'ISMAEL', 'BRAVO GONZÁLEZ', 'C/TEJARES', 41010, 'SEVILLA', 'SEVILLA', '646926839', 'ismaelbg@hotmail.es', 'C'),
+('ISMAEL', '81dc9bdb52d04dc20036dbd8313ed055', 'ISMA', 'BRAVO', 'C/TEJARES', 41010, 'SEVILLA', 'SEVILLA', '646926839', 'ismaelbg@gmail.com', 'C'),
+('JAVI', '81dc9bdb52d04dc20036dbd8313ed055', 'JAVIER', 'CUMPLIDO', 'C/PALOMARES', 41010, 'SEVILLA', 'SEVILLA', '67688786', 'javi@gmail.es', 'C'),
+('JAVIER', '81dc9bdb52d04dc20036dbd8313ed055', 'JAVI', 'CUMPLIDO', 'C/PALOMARES', 41010, 'SEVILLA', 'SEVILLA', '67688786', 'javi@gmail.com', 'C'),
 ('JUANLUS', '81dc9bdb52d04dc20036dbd8313ed055', 'JUAN LUIS', 'RODRIGUEZ MORENO', 'C/LUIS MONTOTO', 41009, 'SEVILLA', 'SEVILLA', '647564784', 'JUANLUS@GMAIL.COM', 'C'),
 ('pepe', '926e27eecdbc7a18858b3798ba99bddd', 'pepe', 'garcia', 'tejares', 41010, 'sevilla', 'sevilla', '646934578', 'pepe@hotmail.com', 'C'),
 ('RICARD12', '81dc9bdb52d04dc20036dbd8313ed055', 'RICARDO', 'MORENO BRAVO', 'RONDA DE TRIANA', 41010, 'SEVILLA', 'SEVILLA', '954676785', 'ROBERT12@GMAIL.COM', 'C'),
@@ -199,6 +202,14 @@ INSERT INTO `usuarios` (`NOM_USU`, `PASSWORD`, `NOMBRE`, `APELLIDOS`, `DIRECCION
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `detalle_pedidos`
+--
+ALTER TABLE `detalle_pedidos`
+  ADD PRIMARY KEY (`ISBN`,`ID_PEDIDOS`),
+  ADD KEY `DETALLE_LIBROS_FK` (`ISBN`),
+  ADD KEY `DETALLE_PEDIDOS_FK` (`ID_PEDIDOS`);
 
 --
 -- Indices de la tabla `genero`
@@ -235,10 +246,17 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `ID_PEDIDOS` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_PEDIDOS` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `detalle_pedidos`
+--
+ALTER TABLE `detalle_pedidos`
+  ADD CONSTRAINT `FK_ASS_12` FOREIGN KEY (`ISBN`) REFERENCES `libros` (`ISBN`),
+  ADD CONSTRAINT `FK_DETALLE_PEDIDOS` FOREIGN KEY (`ID_PEDIDOS`) REFERENCES `pedidos` (`ID_PEDIDOS`);
 
 --
 -- Filtros para la tabla `libros`

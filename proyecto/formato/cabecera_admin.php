@@ -28,35 +28,35 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand">LIBRERIA ONLINE BRAVO</a> 
+          <a class="navbar-brand"><h2>PANEL DE CONTROL</h2></a>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-brand" role="form">
-            <input type="button" value="INICIO"  onClick="location.href='index.php'"/>
-            <input type="button" value="LOS 10 MÁS VENDIDOS"  onClick="location.href='vendidos.php'"/>
-            <input type="button" value="CATÁLOGO"  onClick="location.href='catalogo.php'"/>
-            <input type="button" value="GÉNEROS"  onClick="location.href='genero.php'"/>       
+            
+            <input type="button" value="GÉNEROS"  onClick="location.href='dist_genero.php'"/>
+            <input type="button" value="USUARIOS"  onClick="location.href='usuarios.php'"/>
+            <input type="button" value="PEDIDOS"  onClick="location.href='pedidos.php'"/>
+            <input type="button" value="LIBROS"  onClick="location.href='libros.php'"/>
+            <input type="button" value="DETALLE_PEDIDOS"  onClick="location.href='detalle_pedidos.php'"/>   
           </form>
         </div><!--/.navbar-collapse -->
+        
         </div>          
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <?php
-              if (!isset($_SESSION["nom_usu"])) {//Si no a iniciado sesión ningún usuario que aparezca el botón iniciar sesión
-                  echo "<a href='login.php'><input type='button' value='INICIAR SESIÓN'/></a>";
-                  echo "<a href='registre.php'><input type='button' value='REGISTRATE'/></a>";
+              
+                if ($_SESSION["tipo_usu"]=="A") {
+                  echo "<input type='button' value='Hola Administrador'/>";
+                   echo "<a href='cerrar_session.php'><input type='button' value='DESCONECTAR'/></a>";
                }                                                                 
                else {
-                    echo "<input type='button' value='BIENVENIDO {$_SESSION['nom_usu']}'/>";
-                   echo "<a href='cerrar_session.php'><input type='button' value='DESCONECTAR'/></a>";
+                    echo "No puede entrar a la página del administrador";
+                    header ("Location: index.php");
                }
             ?>  
               
            </form>
         </div>
         </div><!--/.navbar-collapse -->
-      </div>
+      
     </nav>
-        
-        
-             
-  

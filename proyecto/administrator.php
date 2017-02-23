@@ -1,14 +1,11 @@
+
 <?php
-  session_start();
-?>
-<?php
-    include ('formato/cabecera.php');
+    include ('formato/cabecera_admin.php');
 ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
-          <h2><b>Bienvenido a la librería online Bravo</b></h2>
-        <p>En este lugar podrá encontrar multitud de libros que puede comprar. Continuamente añadimos novedades. Visítenos con frecuencia para sus compras.</p>  
+          <br><p align="center"><img src="img/admin.jpg" width="30%" height="30%"/></p>
         </div>
     </div>
 

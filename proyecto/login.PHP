@@ -1,6 +1,9 @@
 <?php
   session_start();
 ?>
+<?php
+    include ('formato/cabecera_login.php');
+?>
         <?php
         //FORM SUBMITTED
         if (isset($_POST["user"])) {
@@ -24,25 +27,36 @@
               } else {
                 $obj =$result->fetch_object ();
                 //VALID LOGIN. SETTING SESSION VARS
+                
                 $_SESSION["nom_usu"]=$_POST["user"];
-                $_SESSION["tipo_usu"]=$obj->tipo;
+                $_SESSION["tipo_usu"]=$obj->TIPO_USU;
                 $_SESSION["language"]="es";
-                header("Location:validar.php");
-              }
+               
+                 
+                if ($_SESSION["tipo_usu"]=="A") {                    
+                    header ("Location: administrator.php");
+                }else {                    
+                    header ("Location: index.php");
+                }     
+            }
              
           } 
         }
       ?>   
-    <form action="login.php" method="post">
-    <legend>Login de usuario</legend>
-        <p>Usuario: <input name="user" required></p>
-        <p>Contraseña: <input name="password" type="password" required></p>
-        <p><input type="submit" value="ENVIAR"><input type="reset" value="BORRAR"></p>
-        <input type="button" value="REGISTRATE" onClick='location.href="registre.php"'/>     
+        <form role="form" action="login.php" method="post">
+          <div class="form-group">
+            <label><h2>Login de usuario</h2></label>
+            <p><b>Usuario: <input type="user" class="form-control" name="user" 
+                               placeholder="Introduzca su usuario"/></b></p>
+          </div>
+          <div class="form-group">    
+            <p><b>Password: <input type="password" class="form-control" name="password" 
+                                placeholder="Introduzca su contraseña"></b></p>
+          </div>
+          <button type="submit" class="btn btn-default" onClick="location.href="index.php"">Enviar</button>
+            <button type="reset" class="btn btn-default">Borrar</button><br><button type="button" class="btn btn-default" onClick='location.href="index.php"'>Volver</button>
+        </form>
 
-    </form>
-
-  
 
 
 
