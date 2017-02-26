@@ -18,7 +18,7 @@
             }
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
+       
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
        
@@ -41,12 +41,12 @@
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <?php
-              if (!isset($_SESSION["nom_usu"])) {//Si no a iniciado sesión ningún usuario que aparezca el botón iniciar sesión
+              if (!isset($_SESSION["nom_usu"])) {//Si no a iniciado sesión ningún usuario que aparezca el botón iniciar sesión                                      y registrate
                   echo "<a href='login.php'><input type='button' value='INICIAR SESIÓN'/></a>";
                   echo "<a href='registre.php'><input type='button' value='REGISTRATE'/></a>";
                }                                                                 
                else {
-                    echo "<input type='button' value='BIENVENIDO {$_SESSION['nom_usu']}'/>";
+                    echo "<input type='button' value='BIENVENID@ {$_SESSION['nom_usu']}'/>";
                    echo "<a href='cerrar_session.php'><input type='button' value='DESCONECTAR'/></a>";
                }
             ?>  
@@ -54,7 +54,6 @@
            </form>
         </div>
         </div><!--/.navbar-collapse -->
-      </div>
     </nav>
         
         

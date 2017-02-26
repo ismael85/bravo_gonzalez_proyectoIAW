@@ -16,7 +16,7 @@
           }
           //MAKING A SELECT QUERY
           /* Consultas de selección que devuelven un conjunto de resultados */
-            $query="SELECT ISBN, SUM(CANTIDAD), TITULO, AUTOR,IMG, PRECIO FROM detalle_pedidos JOIN libros USING (ISBN) GROUP BY ISBN ORDER BY SUM(CANTIDAD) DESC LIMIT 10"; 
+            $query="SELECT ISBN, SUM(CANTIDAD), TITULO, AUTOR,IMG, PRECIO FROM DETALLE_PEDIDOS JOIN LIBROS USING (ISBN) GROUP BY ISBN ORDER BY SUM(CANTIDAD) DESC LIMIT 10"; 
 
           if ($result = $connection->query($query)) {
 
@@ -31,7 +31,7 @@
                 echo "<p>$obj->AUTOR</p>";
                 echo "<img src='".$obj->IMG."' width='250px' height='250px'>";
                 echo "<p>$obj->PRECIO €</p>";
-                echo "<input type='button' value='Añadir al carrito' onClick='location.href='carrito.php'/>";
+                echo "<a href='carrito.php'><input type='button' value='Añadir al carrito'/></a>";
               echo "</form>";
             echo "</div>";
                

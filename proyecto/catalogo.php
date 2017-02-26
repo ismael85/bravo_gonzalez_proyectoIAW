@@ -15,7 +15,7 @@
               exit();
           }
             /* Consultas de selección que devuelven un conjunto de resultados */
-            $query="SELECT * FROM libros ORDER BY TITULO";
+            $query="SELECT * FROM LIBROS ORDER BY TITULO";
           if ($result = $connection->query($query)) {
           
         ?>
@@ -30,7 +30,7 @@
                 echo "<p>$obj->AUTOR</p>";
                 echo "<img src='".$obj->IMG."' width='250px' height='250px'>";
                 echo "<p>$obj->PRECIO €</p>";
-                echo "<input type='button' value='Añadir al carrito' onClick='location.href='carrito.php'/>";
+                echo "<a href='carrito.php'><input type='button' value='Añadir al carrito'/></a>";
              echo "</form>";
             echo "</div>";
           }//Cierre del while

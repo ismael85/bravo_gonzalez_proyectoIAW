@@ -1,6 +1,4 @@
-<?php
-  session_start();
-?>
+
 <?php
     include ('formato/cabecera_admin.php');
 ?>
@@ -16,7 +14,7 @@
                         printf("Connection failed: %s\n", $connection->connect_error);
                         exit();
                     }
-                $query="SELECT * FROM libros ORDER BY autor";
+                $query="SELECT * FROM LIBROS ORDER BY AUTOR";
                     if ($result = $connection->query($query)) {
             ?>
              <table class="table" border="3px solid black">
@@ -58,6 +56,7 @@
               unset($connection);
                     } //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
             ?>
+            </table>
     </div><!--Cierre del class row-->
   </div><!--Cierre del contenedor-->
 </div><!--Cierre del class jumbotron-->

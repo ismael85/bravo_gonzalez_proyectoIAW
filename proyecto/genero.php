@@ -16,11 +16,11 @@
           }
           //MAKING A SELECT QUERY
           /* Consultas de selección que devuelven un conjunto de resultados */
-            $query="SELECT * FROM genero ORDER BY NOM_GEN";
+            $query="SELECT * FROM GENERO ORDER BY NOM_GEN";
             if ($result = $connection->query($query)) {
         ?>
           <h1><p><b>ELIJA EL GÉNERO QUE QUIERE VISUALIZAR</b></p></h1>
-          <ol>
+          
 
         <?php
           //FETCHING OBJECTS FROM THE RESULT SET

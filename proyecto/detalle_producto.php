@@ -18,7 +18,7 @@
           }
           //MAKING A SELECT QUERY
           /* Consultas de selección que devuelven un conjunto de resultados */
-            $query="SELECT * FROM libros WHERE ISBN='".$_GET['isbn']."'";
+            $query="SELECT * FROM LIBROS WHERE ISBN='".$_GET['isbn']."'";
           if ($result = $connection->query($query)) {
               //FETCHING OBJECTS FROM THE RESULT SET
               //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
@@ -32,7 +32,7 @@
                         echo "<img src='".$obj->IMG."' width='250px' height='250px'>";
                         echo "<p>Sinopsis: $obj->SINOPSIS</p>";
                         echo "<p>Precio: $obj->PRECIO €</p>";
-                        echo "<input type='button' value='Añadir al carrito'  onClick='location.href='carrito.php''/>";
+                        echo "<a href='carrito.php'><input type='button' value='Añadir al carrito'/></a>";
                      echo "</form>";
                     echo "</div>";
               }

@@ -1,6 +1,4 @@
-<?php
-  session_start();
-?>
+
 <?php
     include ('formato/cabecera_admin.php');
 ?>
@@ -16,7 +14,7 @@
                         printf("Connection failed: %s\n", $connection->connect_error);
                         exit();
                     }
-                $query="SELECT * FROM detalle_pedidos ORDER BY id_pedidos";
+                $query="SELECT * FROM DETALLE_PEDIDOS ORDER BY ID_PEDIDOS";
                     if ($result = $connection->query($query)) {
             ?>
              <table class="table" border="3px solid black">

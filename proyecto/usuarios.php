@@ -14,7 +14,7 @@
                         printf("Connection failed: %s\n", $connection->connect_error);
                         exit();
                     }
-                $query="SELECT * FROM usuarios ORDER BY nombre";
+                $query="SELECT * FROM USUARIOS ORDER BY NOMBRE";
                     if ($result = $connection->query($query)) {
             ?>
              <table class="table" border="3px solid black">
@@ -49,7 +49,7 @@
                         echo "<td>".$obj->TLF."</td>";
                         echo "<td>".$obj->EMAIL."</td>";
                         echo "<td>".$obj->TIPO_USU."</td>";
-                        echo "<td><a href='editar_usuarios.php'?ID=".$obj->NOM_USU."'><img src='./img/editar.jpg' width=50px heigh=50px/></a></td>";
+                        echo "<td><a href='editar_usuarios.php'?id=".$obj->NOM_USU."'><img src='./img/editar.jpg' width=50px heigh=50px/></a></td>";
                         echo "<td><a href='borrar_usuarios.php'><img src='./img/borrar.jpg' width=50px heigh=50px/></a></td>";
                        echo "</tr>";
                     echo "</div>";

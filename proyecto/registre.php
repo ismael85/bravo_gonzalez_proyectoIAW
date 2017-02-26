@@ -42,9 +42,10 @@
       <div class="container">
         <?php
 		if (!isset($_POST["usu"])) : ?>
-        <form role="form" method="post">
+         
+        <form role="form" method="post" >
             <div class="form-group">
-            <label><h2>Registro de usuario</h2></label>
+            <label><h2><b><u>Registro de usuario</u></b></h2></label>
             <p><b>Nombre de usuario: <input type="user" class="form-control" name="usu" 
                                placeholder="Introduzca su usuario" required/></b></p>
             </div>
@@ -104,7 +105,7 @@
   	        if (!$result) {
    		         echo "Datos existentes";
             } else {
-              echo "Nuevo usuario añadido";
+              echo "Nuevo usuario añadido, ya puede iniciar sesión y comprar libros";
                 
             }
     

@@ -20,7 +20,7 @@
                     }
 
                 /* Consulta que devuelve los libros más nuevos desde comienzos de año */
-                $query="SELECT * FROM libros WHERE FECHA_LANZA > '2017-01-01'";
+                $query="SELECT * FROM LIBROS WHERE FECHA_LANZA > '2017-01-01'";
                     if ($result = $connection->query($query)) {
             ?>
             <?php
@@ -33,8 +33,8 @@
                          echo "<p>$obj->AUTOR</p>";
                          echo "<img src='".$obj->IMG."' width='250px' height='250px'>";
                          echo "<p>$obj->PRECIO €</p>";
-                         echo "<input type='button' value='Añadir al carrito' onClick='location.href='carrito.php'/>";
-                        echo "</form>";
+                         echo "<a href='carrito.php'><input type='button' value='Añadir al carrito'/></a>";
+                         echo "</form>";
                     echo "</div>";
                       
                   }
@@ -44,8 +44,9 @@
               unset($connection);
                     } //END OF THE IF CHECKING IF THE QUERY WAS RIGHT
             ?>
-    </div><!--Cierre del class row-->
-  </div><!--Cierre del contenedor-->
-</div><!--Cierre del class jumbotron-->
+        </div><!--Cierre del class row-->
+      </div><!--Cierre del contenedor-->
+    </div><!--Cierre del class jumbotron-->
+
 
  

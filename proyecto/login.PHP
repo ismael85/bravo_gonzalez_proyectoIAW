@@ -16,7 +16,7 @@
           }
           //MAKING A SELECT QUERY
           //Password coded with md5 at the database. Look for better options
-          $consulta="select * from usuarios where nom_usu='".$_POST["user"]."' and password=md5('".$_POST["password"]."');";
+          $consulta="select * from USUARIOS where NOM_USU='".$_POST["user"]."' and PASSWORD=md5('".$_POST["password"]."');";
           //Test if the query was correct
           //SQL Injection Possible
           //Check http://php.net/manual/es/mysqli.prepare.php for more security
