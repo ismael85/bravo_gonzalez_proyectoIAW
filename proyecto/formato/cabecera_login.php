@@ -31,7 +31,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
             <?php
-              if (!isset($_SESSION["nom_usu"])) {//Si no a iniciado sesión ningún usuario que aparezca el botón iniciar sesión
+              if (!isset($_SESSION["nom_usu"])) {//Si no a iniciado sesión ningún usuario que aparezca el botón registrate
+                  echo "<a href='index.php'><input type='button' value='INICIO'/></a>"; 
                   echo "<a href='registre.php'><input type='button' value='REGISTRATE'/></a>";          
                }                                                                 
             

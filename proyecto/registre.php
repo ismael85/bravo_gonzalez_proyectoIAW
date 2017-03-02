@@ -31,7 +31,7 @@
         </div> 
           <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right" role="form">
-              <button type="button" class="btn btn-default" onClick='location.href="index.php"'>Ir a Inicio</button>
+              <button type="button" class="btn btn-default" onClick='location.href="index.php"'>INICIO</button>
           </form>
           </div>
       </div>
@@ -43,7 +43,7 @@
         <?php
 		if (!isset($_POST["usu"])) : ?>
          
-        <form role="form" method="post" >
+        <center><form role="form" method="post" >
             <div class="form-group">
             <label><h2><b><u>Registro de usuario</u></b></h2></label>
             <p><b>Nombre de usuario: <input type="user" class="form-control" name="usu" 
@@ -67,7 +67,7 @@
             </div>
             <div class="form-group">
             <p><b>CP: <input type="number" class="form-control" name="cp"   
-                                placeholder="Introduzca su código postal" required></b></p>
+                                placeholder="Introduzca su cp" required></b></p>
             </div>
             <div class="form-group">
             <p><b>Localidad: <input type="text" class="form-control" name="loca"  
@@ -79,7 +79,7 @@
             </div>
             <div class="form-group">
             <p><b>Telefono: <input type="number" class="form-control" name="tlf"  
-                                placeholder="Introduzca su número de teléfono" required></b></p>
+                                placeholder="Introduzca su nº de teléfono" required></b></p>
             </div>
             <div class="form-group">
             <p><b>Email: <input type="email" class="form-control" name="email"  
@@ -88,7 +88,7 @@
             <button type="submit" class="btn btn-default">Enviar</button>
             <button type="reset" class="btn btn-default">Borrar</button>
 
-        </form>
+        </form></center>
         <?php else: ?>
         <?php
         //CREATING THE CONNECTION

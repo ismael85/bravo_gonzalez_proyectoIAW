@@ -17,6 +17,7 @@
                 $query="SELECT * FROM GENERO ORDER BY NOM_GEN";
                     if ($result = $connection->query($query)) {
             ?>
+             <h2><b>GÉNEROS</b></h2>
              <table class="table" border="3px solid black">
                 <thead>
                 <tr class="info">

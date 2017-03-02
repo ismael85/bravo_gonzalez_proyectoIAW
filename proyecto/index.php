@@ -6,7 +6,7 @@
     <div class="jumbotron">
       <div class="container"><!--Todo el contenido de la tabla esta dentro de este contenedor--> 
         <h2><b>Bienvenido a la librería online Bravo</b></h2>
-        <p>En este lugar podrá encontrar multitud de libros que puede comprar. Continuamente añadimos novedades. Visítenos con frecuencia para sus compras.</p>
+        <p>En este lugar podrá encontrar multitud de libros que puede comprar. Contiúamente añadimos novedades. Visítenos con frecuencia para sus compras.</p>
         <h2 align="center"><b>NOVEDADES</b></h2>  
         <div class="row">           
             <?php
@@ -29,8 +29,20 @@
                       
                       echo "<div class='col-md-4'>";
                         echo "<form class='navbar-form navbar-right' role='form'>";
-                         echo "<h4><b><a href='detalle_producto.php?isbn=".$obj->ISBN."'>$obj->TITULO</a></b></h4>";
-                         echo "<p>$obj->AUTOR</p>";
+                         echo "<h4><b><a href='detalle_producto.php?isbn=".$obj->ISBN."'>";
+                            $titulo = $obj->TITULO;
+                                if(strlen($titulo) > 18)
+                                    echo substr($titulo,0 , 18)."...";
+                                else
+                                    echo substr($titulo, 0 , 18);
+                         echo "</a></b></h4>";
+                            $escritor = $obj->AUTOR;
+                         echo "<p>";
+                            if(strlen($escritor) > 18)
+                                echo substr($escritor,0 , 18)."...";
+                            else
+                                echo substr($escritor, 0 , 18);
+                         echo "</p>";
                          echo "<img src='".$obj->IMG."' width='250px' height='250px'>";
                          echo "<p>$obj->PRECIO €</p>";
                          echo "<a href='carrito.php'><input type='button' value='Añadir al carrito'/></a>";

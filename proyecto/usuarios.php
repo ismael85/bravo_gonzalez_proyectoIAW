@@ -17,6 +17,7 @@
                 $query="SELECT * FROM USUARIOS ORDER BY NOMBRE";
                     if ($result = $connection->query($query)) {
             ?>
+            <h2><b>USUARIOS</b></h2>
              <table class="table" border="3px solid black">
                 <thead>
                 <tr class="info">
@@ -50,7 +51,7 @@
                         echo "<td>".$obj->EMAIL."</td>";
                         echo "<td>".$obj->TIPO_USU."</td>";
                         echo "<td><a href='editar_usuarios.php'?id=".$obj->NOM_USU."'><img src='./img/editar.jpg' width=50px heigh=50px/></a></td>";
-                        echo "<td><a href='borrar_usuarios.php'><img src='./img/borrar.jpg' width=50px heigh=50px/></a></td>";
+                        echo "<td><a href='borrar_usuarios.php'?id=".$obj->NOM_USU."'><img src='./img/borrar.jpg' width=50px heigh=50px/></a></td>";
                        echo "</tr>";
                     echo "</div>";
 

@@ -43,7 +43,7 @@
           } 
         }
       ?>   
-        <form role="form" action="login.php" method="post">
+        <center><form role="form" action="login.php" method="post">
           <div class="form-group">
             <label><h2>Login de usuario</h2></label>
             <p><b>Usuario: <input type="user" class="form-control" name="user" 
@@ -54,8 +54,8 @@
                                 placeholder="Introduzca su contraseña"></b></p>
           </div>
           <button type="submit" class="btn btn-default" onClick="location.href="index.php"">Enviar</button>
-            <button type="reset" class="btn btn-default">Borrar</button><br><button type="button" class="btn btn-default" onClick='location.href="index.php"'>Volver</button>
-        </form>
+            <button type="reset" class="btn btn-default">Borrar</button>
+        </form></center>
 
 
 

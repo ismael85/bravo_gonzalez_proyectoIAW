@@ -17,6 +17,7 @@
                 $query="SELECT * FROM PEDIDOS";
                     if ($result = $connection->query($query)) {
             ?>
+            <h2><b>PEDIDOS</b></h2>
              <table class="table" border="3px solid black">
                 <thead>
                 <tr class="info">

@@ -17,6 +17,7 @@
                 $query="SELECT * FROM DETALLE_PEDIDOS ORDER BY ID_PEDIDOS";
                     if ($result = $connection->query($query)) {
             ?>
+            <h2><b>DETALLE_PEDIDOS</b></h2>
              <table class="table" border="3px solid black">
                 <thead>
                 <tr class="info">
