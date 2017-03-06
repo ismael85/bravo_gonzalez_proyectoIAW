@@ -16,9 +16,8 @@
                 <tr class="info">
                     
                     <th>ID</th>
-                    <th>Nom_gen</th>
-                    <th>Editar</th>
-                    <th>Borrar</th>
+                    <th>NOMBRE GÉNERO</th>
+                    <th>BORRAR</th>
                 </tr>
                 </thead>
             <?php
@@ -29,7 +28,6 @@
                         
                         echo "<td>".$obj->ID_GEN."</td>";
                         echo "<td>".$obj->NOM_GEN."</td>";
-                        echo "<td><img src='./img/editar.jpg' width=50px heigh=50px;/></td>";
                         echo "<td><form method='get'><a href='borrar_genero.php?id=$obj->ID_GEN'><img src='./img/borrar.jpg' width=50px heigh=50px;/></td>";
                        echo "</tr>";
                     echo "</div>";

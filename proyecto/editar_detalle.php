@@ -42,7 +42,7 @@
                         echo "</div>";    
                         echo "<div class='form-group'>";
                                     echo "<label for='cp'>CP</label>";
-                                    echo "<input type='cp' class='form-control' name='cp' maxlength='5' value='$obj->COD_POSTAL' required>";
+                                    echo "<input type='number' class='form-control' name='cp' maxlength='5' value='$obj->COD_POSTAL' required>";
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='loca'>LOCALIDAD</label>";
@@ -75,8 +75,7 @@
 
 
                     } //Cierre $_GET
-
-                      if (isset($_POST['id'])) {
+                    if (isset($_POST['id'])) {
 
                     //variables
                     $id=$_POST['id'];
@@ -117,10 +116,7 @@
                   }//Cierre del $_POST
 
                     ?>
-
     </div><!--Cierre del row-->
   </div><!--Cierre del contenedor-->
 </div><!--Cierre del class jumbotron-->
-
-
 

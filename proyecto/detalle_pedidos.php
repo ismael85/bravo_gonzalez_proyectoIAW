@@ -30,7 +30,7 @@
                         echo "<td>".$obj->ISBN."</td>";
                         echo "<td>".$obj->ID_PEDIDOS."</td>";
                         echo "<td>".$obj->CANTIDAD."</td>";
-                        echo "<td><img src='./img/editar.jpg' width=50px heigh=50px;/></td>";
+                        echo "<td><form method='get'><a href='editar_detalle.php?id=$obj->ISBN'><img src='./img/editar.jpg' width=50px heigh=50px;/></td>";
                        echo "</tr>";
                     echo "</div>";
 

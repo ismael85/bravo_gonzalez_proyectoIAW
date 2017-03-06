@@ -66,7 +66,7 @@
                                 placeholder="Introduzca su dirección" required></b></p>
             </div>
             <div class="form-group">
-            <p><b>CP: <input type="number" class="form-control" name="cp"   
+            <p><b>CP: <input type="cp" class="form-control" name="cp" maxlength="5"  
                                 placeholder="Introduzca su cp" required></b></p>
             </div>
             <div class="form-group">
@@ -98,6 +98,9 @@
         $result = $connection->query($insert);
   	        if (!$result) {
    		         echo "Datos existentes";
+                echo "<br><form action='registre.php'>
+                        <input type='submit' value='Volver' />
+                        </form>";
             } else {
               echo "Nuevo usuario añadido, ya puede iniciar sesión y comprar libros";
                 
