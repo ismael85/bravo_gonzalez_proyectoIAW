@@ -78,8 +78,8 @@
                                 placeholder="Introduzca su provincia" required></b></p>
             </div>
             <div class="form-group">
-            <p><b>Telefono: <input type="number" class="form-control" name="tlf"  
-                                placeholder="Introduzca su nº de teléfono" required></b></p>
+            <p><b>Telefono: <input type="tel" class="form-control" name="tlf" maxlength="9"
+                                placeholder="Introduzca nº de teléfono" required></b></p>
             </div>
             <div class="form-group">
             <p><b>Email: <input type="email" class="form-control" name="email"  
