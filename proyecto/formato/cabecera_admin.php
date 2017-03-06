@@ -44,12 +44,12 @@
           <form class="navbar-form navbar-right" role="form">
             <?php
               
-                if ($_SESSION["tipo_usu"]=="A") {
+                if ($_SESSION["tipo_usu"]=="A") {//Si a iniciado sesión como un usuario tipo administrador que le aparezca un                                   saludo y el botón de desconectar
                   echo "<input type='button' value='Hola Administrador'/>";
                    echo "<a href='cerrar_session.php'><input type='button' value='DESCONECTAR'/></a>";
                }                                                                 
-               else {
-                    echo "No puede entrar a la página del administrador";
+               else {//Si es un usuario que no es tipo no le deje entrar en zona admninistrador y le mande a index.php 
+                   
                     header ("Location: index.php");
                }
             ?>  
@@ -59,3 +59,5 @@
         </div><!--/.navbar-collapse -->
       
     </nav>
+    </body>
+</html>

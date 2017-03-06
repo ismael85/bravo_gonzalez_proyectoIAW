@@ -6,18 +6,13 @@
     <div class="jumbotron">
       <div class="container"><!--Todo el contenido de la tabla esta dentro de este contenedor--> 
         <h2><b>Bienvenido a la librería online Bravo</b></h2>
-        <p>En este lugar podrá encontrar multitud de libros que puede comprar. Contiúamente añadimos novedades. Visítenos con frecuencia para sus compras.</p>
+        <p>En este lugar podrá encontrar multitud de libros que puede comprar. Continúamente añadimos novedades. Visítenos con frecuencia para sus compras.</p>
         <h2 align="center"><b>NOVEDADES</b></h2>  
-        <div class="row">           
+        <div class="row">  
+            
+    
             <?php
-                //CREATING THE CONNECTION
-                $connection = new mysqli("localhost", "admin", "12345", "proyecto");
-                $connection->set_charset("uft8");
-                //TESTING IF THE CONNECTION WAS RIGHT
-                    if ($connection->connect_errno) {
-                        printf("Connection failed: %s\n", $connection->connect_error);
-                        exit();
-                    }
+              include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php 
 
                 /* Consulta que devuelve los libros más nuevos desde comienzos de año */
                 $query="SELECT * FROM LIBROS WHERE FECHA_LANZA > '2017-01-01'";

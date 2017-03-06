@@ -10,10 +10,10 @@
                 //Transformamos el array recibido en un único numero, que será el IdReparacion
                 $id = $_GET['id'];
                   //Comprobamos que la reparacion existe.
-                  if ($result = $connection->query("SELECT * FROM USUARIOS WHERE NOM_USU='".$_GET['id']."';")) {
-                    if ($result2 = $connection->query("DELETE FROM PEDIDOS WHERE NOM_USU='".$_GET['id']."';")) {
-                      if ($result2 = $connection->query("DELETE FROM USUARIOS WHERE NOM_USU='".$_GET['id']."';")) {
-                          echo "El usuario $id ha sido borrado.<br>";
+                  if ($result = $connection->query("SELECT * FROM GENERO WHERE ID_GEN='".$_GET['id']."';")) {
+                    if ($result2 = $connection->query("DELETE FROM LIBROS WHERE ID_GEN='".$_GET['id']."';")) {
+                      if ($result2 = $connection->query("DELETE FROM GENERO WHERE ID_GEN='".$_GET['id']."';")) {
+                          echo "El genero $id ha sido borrado.<br>";
                         } else {
                             mysqli_error($connection);
                       }
@@ -24,7 +24,7 @@
                         mysqli_error($connection);
                 }
                  //boton para volver a la página principal.
-                  echo "<br><form action='usuarios.php'>
+                  echo "<br><form action='genero.php'>
                         <input type='submit' value='Volver' />
                         </form>";
          ?>

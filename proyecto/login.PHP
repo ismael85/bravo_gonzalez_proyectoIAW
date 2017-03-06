@@ -7,13 +7,8 @@
         <?php
         //FORM SUBMITTED
         if (isset($_POST["user"])) {
-          //CREATING THE CONNECTION
-          $connection = new mysqli("localhost", "admin", "12345", "proyecto");
-          //TESTING IF THE CONNECTION WAS RIGHT
-          if ($connection->connect_errno) {
-              printf("Connection failed: %s\n", $connection->connect_error);
-              exit();
-          }
+                include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php
+            
           //MAKING A SELECT QUERY
           //Password coded with md5 at the database. Look for better options
           $consulta="select * from USUARIOS where NOM_USU='".$_POST["user"]."' and PASSWORD=md5('".$_POST["password"]."');";
@@ -33,10 +28,10 @@
                 $_SESSION["language"]="es";
                
                  
-                if ($_SESSION["tipo_usu"]=="A") {                    
+                if ($_SESSION["tipo_usu"]=="A") {//Si inicia sesión como un usuario tipo A que se vaya a administrator.php                    
                     header ("Location: administrator.php");
                 }else {                    
-                    header ("Location: index.php");
+                    header ("Location: index.php");//Sino que se dirija al index.php
                 }     
             }
              
@@ -53,7 +48,7 @@
             <p><b>Password: <input type="password" class="form-control" name="password" 
                                 placeholder="Introduzca su contraseña"></b></p>
           </div>
-          <button type="submit" class="btn btn-default" onClick="location.href="index.php"">Enviar</button>
+            <button type="submit" class="btn btn-default" onClick="location.href='index.php'">Enviar</button>
             <button type="reset" class="btn btn-default">Borrar</button>
         </form></center>
 

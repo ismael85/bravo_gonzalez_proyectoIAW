@@ -3,18 +3,12 @@
     include ('formato/cabecera_admin.php');
 ?>
 <div class="jumbotron">
-      <div class="container"><!--Todo el contenido de la tabla esta dentro de este contenedor--> 
-        <div class="row">           
+      <div class="container">
+        <div class="row">
+            
             <?php
-                //CREATING THE CONNECTION
-                $connection = new mysqli("localhost", "admin", "12345", "proyecto");
-                $connection->set_charset("uft8");
-                //TESTING IF THE CONNECTION WAS RIGHT
-                    if ($connection->connect_errno) {
-                        printf("Connection failed: %s\n", $connection->connect_error);
-                        exit();
-                    }
-                $query="SELECT * FROM USUARIOS ORDER BY NOMBRE";
+               include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php
+                $query="SELECT * FROM USUARIOS WHERE TIPO_USU!='A' ORDER BY NOMBRE";
                     if ($result = $connection->query($query)) {
             ?>
             <h2><b>USUARIOS</b></h2>
@@ -50,8 +44,8 @@
                         echo "<td>".$obj->TLF."</td>";
                         echo "<td>".$obj->EMAIL."</td>";
                         echo "<td>".$obj->TIPO_USU."</td>";
-                        echo "<td><a href='editar_usuarios.php'?id=".$obj->NOM_USU."'><img src='./img/editar.jpg' width=50px heigh=50px/></a></td>";
-                        echo "<td><a href='borrar_usuarios.php'?id=".$obj->NOM_USU."'><img src='./img/borrar.jpg' width=50px heigh=50px/></a></td>";
+                        echo "<td><form method='get'><a href='editar_usuarios.php?id=$obj->NOM_USU'><img src='./img/editar.jpg' width=50px heigh=50px/></a></td>";
+                        echo "<td><form method='get'><a href='borrar_usuarios.php?id=$obj->NOM_USU'><img src='./img/borrar.jpg' width=50px heigh=50px/></a></form></td>";
                        echo "</tr>";
                     echo "</div>";
 

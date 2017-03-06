@@ -6,14 +6,7 @@
       <div class="container"><!--Todo el contenido de la tabla esta dentro de este contenedor--> 
         <div class="row">           
             <?php
-                //CREATING THE CONNECTION
-                $connection = new mysqli("localhost", "admin", "12345", "proyecto");
-                $connection->set_charset("uft8");
-                //TESTING IF THE CONNECTION WAS RIGHT
-                    if ($connection->connect_errno) {
-                        printf("Connection failed: %s\n", $connection->connect_error);
-                        exit();
-                    }
+               include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php
                 $query="SELECT * FROM LIBROS ORDER BY AUTOR";
                     if ($result = $connection->query($query)) {
             ?>
@@ -46,7 +39,7 @@
                         echo "<td>".$obj->FECHA_LANZA."</td>";
                         echo "<td>".$obj->ID_GEN."</td>";
                         echo "<td><img src='./img/editar.jpg' width=50px heigh=50px;/></td>";
-                        echo "<td><img src='./img/borrar.jpg' width=50px heigh=50px;/></td>";
+                        echo "<td><form method='get'><a href='borrar_libro.php?id=$obj->ISBN'><img src='./img/borrar.jpg' width=50px heigh=50px;/></td>";
                        echo "</tr>";
                     echo "</div>";
 

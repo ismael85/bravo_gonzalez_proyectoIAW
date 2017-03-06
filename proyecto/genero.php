@@ -6,14 +6,7 @@
       <div class="container">
         <div class="row">
         <?php
-          //CREATING THE CONNECTION
-          $connection = new mysqli("localhost", "admin", "12345", "proyecto");
-          $connection->set_charset("uft8");
-          //TESTING IF THE CONNECTION WAS RIGHT
-          if ($connection->connect_errno) {
-              printf("Connection failed: %s\n", $connection->connect_error);
-              exit();
-          }
+          include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php
           //MAKING A SELECT QUERY
           /* Consultas de selección que devuelven un conjunto de resultados */
             $query="SELECT * FROM GENERO ORDER BY NOM_GEN";

@@ -6,15 +6,11 @@
       <div class="container">
         <div class="row">
              <center><h3><b>LOS 10 MÁS VENDIDOS</b></h3></center>
+       
+            
+        
         <?php
-          //CREATING THE CONNECTION
-          $connection = new mysqli("localhost", "admin", "12345", "proyecto");
-          $connection->set_charset("uft8");
-          //TESTING IF THE CONNECTION WAS RIGHT
-          if ($connection->connect_errno) {
-              printf("Connection failed: %s\n", $connection->connect_error);
-              exit();
-          }
+          include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php
           //MAKING A SELECT QUERY
           /* Consultas de selección que devuelven un conjunto de resultados */
             $query="SELECT ISBN, SUM(CANTIDAD), TITULO, AUTOR,IMG, PRECIO FROM DETALLE_PEDIDOS JOIN LIBROS USING (ISBN) GROUP BY ISBN ORDER BY SUM(CANTIDAD) DESC LIMIT 10"; 

@@ -8,13 +8,8 @@
         <?php
           //CREATING THE CONNECTION
         if (isset($_GET['ID'])) {
-          $connection = new mysqli("localhost", "admin", "12345", "proyecto");
-          $connection->set_charset("uft8");
-          //TESTING IF THE CONNECTION WAS RIGHT
-          if ($connection->connect_errno) {
-              printf("Connection failed: %s\n", $connection->connect_error);
-              exit();
-          }
+                include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php
+            
           //MAKING A SELECT QUERY
           /* Consultas de selección que devuelven un conjunto de resultados */
             $query="SELECT * FROM LIBROS WHERE ID_GEN='".$_GET['ID']."' ORDER BY TITULO" ;
@@ -26,11 +21,11 @@
                 echo "<div class='col-md-4'>";
                  echo "<form class='navbar-form navbar-right' role='form'>";
                     echo "<h4><b><a href='detalle_producto.php?isbn=".$obj->ISBN."'>";
-                        $titulo = $obj->TITULO;
-                        if(strlen($titulo) > 18)
+                        $titulo = $obj->TITULO;//Metes en una variable el obj titulo
+                        if(strlen($titulo) > 18)//Si el numero de caracteres es mayor 18 que sustituya los siguientes                                   caracteres por ...
                             echo substr($titulo,0 , 18)."...";
                         else
-                                echo substr($titulo, 0 , 18);
+                                echo substr($titulo, 0 , 18);//Y sino deje los caracteres que correspondan
                     echo "</a></b></h4>";
                     $escritor = $obj->AUTOR;
                     echo "<p>";

@@ -5,7 +5,7 @@
     //SESSION ALREADY CREATED
     //SHOW SESSION DATA
     var_dump($_SESSION);
-  } else {
+  } else {//Si hay una sesión iniciada que la destruya y se vaya al index.php
     session_destroy();
     header("Location: index.php");
   }
