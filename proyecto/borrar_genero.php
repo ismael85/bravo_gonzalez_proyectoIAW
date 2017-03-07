@@ -24,7 +24,7 @@
                         mysqli_error($connection);
                 }
                  //boton para volver a la página principal.
-                  echo "<br><form action='genero.php'>
+                  echo "<br><form action='dist_genero.php'>
                         <input type='submit' value='Volver' />
                         </form>";
          ?>

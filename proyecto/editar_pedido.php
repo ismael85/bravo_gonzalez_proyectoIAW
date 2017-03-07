@@ -22,7 +22,7 @@
                         echo "<legend>Rellene para editar este pedido:</legend>";
                         echo "<div class='form-group'>";
                                     echo "<label for='id'>ID_PEDIDOS</label>";
-                                    echo "<input type='text' class='form-control' name='id' value='$obj->ID_PEDIDOS' required disabled>";
+                                    echo "<input type='text' class='form-control' name='id' value='$obj->ID_PEDIDOS' required readonly>";
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='fechaped'>FECHA_PEDIDO</label>";
@@ -34,7 +34,7 @@
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='usuario'>USUARIO</label>";
-                                    echo "<input type='text' class='form-control' name='usuario' value='$obj->NOM_USU' required disabled>";
+                                    echo "<input type='text' class='form-control' name='usuario' value='$obj->NOM_USU' required readonly>";
                         echo "</div>";
                         
 

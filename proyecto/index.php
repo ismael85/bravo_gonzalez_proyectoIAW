@@ -39,7 +39,7 @@
                                 echo substr($escritor, 0 , 18);
                          echo "</p>";
                          echo "<img src='".$obj->IMG."' width='250px' height='250px'>";
-                         echo "<p><$obj->PRECIO €</p>";
+                         echo "<p>$obj->PRECIO €</p>";
                          echo "<a href='carrito.php'><input type='button' value='Añadir al carrito'/></a>";
                          echo "</form>";
                     echo "</div>";

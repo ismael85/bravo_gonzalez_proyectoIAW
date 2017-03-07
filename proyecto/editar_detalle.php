@@ -22,7 +22,7 @@
                         echo "<legend>Rellene para editar este usuario:</legend>";
                         echo "<div class='form-group'>";
                                     echo "<label for='id'>USUARIO</label>";
-                                    echo "<input type='text' class='form-control' name='id' value='$obj->NOM_USU' required disabled>";
+                                    echo "<input type='text' class='form-control' name='id' value='$obj->NOM_USU' required readonly>";
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='password'>PASSWORD</label>";
@@ -62,7 +62,7 @@
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='tipo'>TIPO</label>";
-                                    echo "<input type='text' class='form-control' name='tipo' value='$obj->TIPO_USU' required disabled>";
+                                    echo "<input type='text' class='form-control' name='tipo' value='$obj->TIPO_USU' required readonly>";
                         echo "</div>";
 
                           echo "<input type='submit' value='Actualizar'>";
