@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-02-2017 a las 09:10:57
--- Versión del servidor: 10.1.16-MariaDB
--- Versión de PHP: 5.6.24
+-- Tiempo de generación: 07-03-2017 a las 19:07:56
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -37,18 +37,11 @@ CREATE TABLE `detalle_pedidos` (
 --
 
 INSERT INTO `detalle_pedidos` (`ISBN`, `ID_PEDIDOS`, `CANTIDAD`) VALUES
-('978-84-08-14147-1', 1, 2),
+('978-84-08-14147-1', 1, 1),
 ('978-84-08-14147-1', 3, 1),
-('978-84-08-15416-7', 2, 1),
 ('978-84-08-16317-6', 4, 2),
-('978-84-08-16318-3', 2, 1),
 ('978-84-08-16318-3', 6, 1),
-('978-84-08-16338-1', 5, 1),
 ('978-84-08-16345-9', 5, 1),
-('978-84-08-16590-3', 6, 1),
-('978-84-204-1734-9', 6, 1),
-('978-84-233-5100-8', 1, 1),
-('978-84-233-5101-5', 6, 1),
 ('9788490622858', 2, 1);
 
 -- --------------------------------------------------------
@@ -156,7 +149,7 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`ID_PEDIDOS`, `FECH_PED`, `FECH_ENTR`, `NOM_USU`) VALUES
-(1, '2017-01-09', '2017-01-13', 'DIEGO15'),
+(1, '2017-01-08', '2017-01-11', 'DIEGO15'),
 (2, '2017-01-12', '2017-01-15', 'DIEGO15'),
 (3, '2017-01-14', '2017-01-18', 'ISMA85'),
 (4, '2017-01-16', '2017-01-19', 'JUANLUS'),
@@ -189,7 +182,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`NOM_USU`, `PASSWORD`, `NOMBRE`, `APELLIDOS`, `DIRECCION`, `COD_POSTAL`, `LOCALIDAD`, `PROVINCIA`, `TLF`, `EMAIL`, `TIPO_USU`) VALUES
 ('ADMIN', '81dc9bdb52d04dc20036dbd8313ed055', 'ADMINISTRADOR', 'ADMIN', 'DESCONOCIDA', 41010, 'SEVILLA', 'SEVILLA', '954798989', 'ADMIN@LIBRERIA.COM', 'A'),
-('DIEGO15', '81dc9bdb52d04dc20036dbd8313ed055', 'DIEGO', 'LEON LINARES', 'C/ESPERANZA DE TRIANA', 41010, 'SEVILLA', 'SEVILLA', '656474896', 'DIE23@YAHOO.ES', 'C'),
+('administrador', '81dc9bdb52d04dc20036dbd8313ed055', 'admin', 'admin', 'c/tejares', 41010, 'sevilla', 'sevilla', '646883399', 'admin@gmail.com', 'A'),
+('DIEGO15', '2e99bf4e42962410038bc6fa4ce40d97', 'DIEGO', 'LEON GARCIA', 'C/ESPERANZA DE TRIANA', 41010, 'SEVILLA', 'SEVILLA', '656474896', 'DIE23@YAHOO.ES', 'C'),
 ('ISMA85', '81dc9bdb52d04dc20036dbd8313ed055', 'ISMAEL', 'BRAVO GONZÁLEZ', 'C/TEJARES', 41010, 'SEVILLA', 'SEVILLA', '646926839', 'ismaelbg@hotmail.es', 'C'),
 ('ISMAEL', '81dc9bdb52d04dc20036dbd8313ed055', 'ISMA', 'BRAVO', 'C/TEJARES', 41010, 'SEVILLA', 'SEVILLA', '646926839', 'ismaelbg@gmail.com', 'C'),
 ('JAVI', '81dc9bdb52d04dc20036dbd8313ed055', 'JAVIER', 'CUMPLIDO', 'C/PALOMARES', 41010, 'SEVILLA', 'SEVILLA', '67688786', 'javi@gmail.es', 'C'),
@@ -246,7 +240,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `ID_PEDIDOS` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_PEDIDOS` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- Restricciones para tablas volcadas
 --

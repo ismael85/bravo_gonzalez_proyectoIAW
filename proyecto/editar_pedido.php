@@ -25,6 +25,14 @@
                                     echo "<input type='text' class='form-control' name='id' value='$obj->ID_PEDIDOS' required readonly>";
                         echo "</div>";
                         echo "<div class='form-group'>";
+                                    echo "<label for='isbn'>ISBN</label>";
+                                    echo "<input type='text' class='form-control' name='isbn' value='$obj->ISBN' required readonly>";
+                        echo "</div>";
+                        echo "<div class='form-group'>";
+                                    echo "<label for='cantidad'>CANTIDAD</label>";
+                                    echo "<input type='number' class='form-control' name='cantidad' value='$obj->CANTIDAD' required>";
+                        echo "</div>";
+                        echo "<div class='form-group'>";
                                     echo "<label for='fechaped'>FECHA_PEDIDO</label>";
                                     echo "<input type='date' class='form-control' name='fechaped' value='$obj->FECH_PED' required>";
                         echo "</div>";
@@ -52,6 +60,8 @@
 
                     //variables
                     $id=$_POST['id'];
+                    $isbn=$_POST['isbn'];
+                    $cantidad=$_POST['cantidad'];
                     $fped=$_POST['fechaped'];
                     $fent=$_POST['fechaent'];
                     $usuario=$_POST['usuario'];
@@ -64,18 +74,28 @@
                     `FECH_ENTR` =  '$fent',
                     `NOM_USU` = '$usuario'
                     WHERE `ID_PEDIDOS` ='".$_GET["id"]."'";
+                    $consulta2="UPDATE DETALLE_PEDIDOS SET
+                    `ISBN` =  '$isbn', 
+                    `ID_PEDIDOS` =  '$id',
+                    `CANTIDAD` =  '$cantidad'
+                    WHERE `ID_PEDIDOS` ='".$_GET["id"]."'";
+                                        
+                   
+
                           
 
                     if ($result = $connection->query($consulta)) {
-
-                      header ("Location: pedidos.php");
+                        if ($result2 = $connection->query($consulta2)) {
+                            header ("Location: pedidos.php");
                     } else {
+                            mysqli_error($connection);
+                      }
+                    } else {
+                      }
+                          mysqli_error($connection);
+                      }
 
-                          echo "Error: " . $result . "<br>" . mysqli_error($connection);
-                    }//Cierre del else
-                  }//Cierre del $_POST
-
-                    ?>
+            ?>
 
     </div><!--Cierre del row-->
   </div><!--Cierre del contenedor-->

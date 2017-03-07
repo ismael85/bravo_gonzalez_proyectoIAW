@@ -34,8 +34,7 @@
             <input type="button" value="GÉNEROS"  onClick="location.href='dist_genero.php'"/>
             <input type="button" value="USUARIOS"  onClick="location.href='usuarios.php'"/>
             <input type="button" value="PEDIDOS"  onClick="location.href='pedidos.php'"/>
-            <input type="button" value="LIBROS"  onClick="location.href='libros.php'"/>
-            <input type="button" value="DETALLE_PEDIDOS"  onClick="location.href='detalle_pedidos.php'"/>   
+            <input type="button" value="LIBROS"  onClick="location.href='libros.php'"/>  
           </form>
         </div><!--/.navbar-collapse -->
         

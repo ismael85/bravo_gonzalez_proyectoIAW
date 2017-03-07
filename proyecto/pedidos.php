@@ -8,7 +8,8 @@
             
             <?php
              include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php  
-                $query="SELECT * FROM PEDIDOS JOIN DETALLE_PEDIDOS USING (ID_PEDIDOS) JOIN LIBROS USING (ISBN)";
+                $query="SELECT * FROM PEDIDOS JOIN DETALLE_PEDIDOS USING (ID_PEDIDOS) JOIN LIBROS USING (ISBN) ORDER BY ID_PEDIDOS";
+               
                     if ($result = $connection->query($query)) {
             ?>
             <h2><b>PEDIDOS</b></h2>
@@ -17,7 +18,7 @@
                 <tr class="info">
                     
                     <th>ID</th>
-                    <th>TITULO</th>
+                    <th>ISBN</th>
                     <th>CANTIDAD</th>
                     <th>FECHA_PEDIDO</th>
                     <th>FECHA_ENTREGA</th>
@@ -33,7 +34,7 @@
                        echo "<tr class='info'>";
                         
                         echo "<td>".$obj->ID_PEDIDOS."</td>";
-                        echo "<td>".$obj->TITULO."</td>";
+                        echo "<td>".$obj->ISBN."</td>";
                         echo "<td>".$obj->CANTIDAD."</td>";
                         echo "<td>".$obj->FECH_PED."</td>";
                         echo "<td>".$obj->FECH_ENTR."</td>";
