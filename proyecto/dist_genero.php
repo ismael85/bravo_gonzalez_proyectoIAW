@@ -10,7 +10,7 @@
                 $query="SELECT * FROM GENERO ORDER BY NOM_GEN";
                     if ($result = $connection->query($query)) {
             ?>
-             <h2><b>GÉNEROS</b></h2><form action='registre_genero.php'>
+             <h2><b>ADMINISTRAR GÉNEROS</b></h2><form action='registre_genero.php'>
             <input type='submit' value='Añadir género' /></form>
              <table class="table" border="3px solid black">
                 <thead>

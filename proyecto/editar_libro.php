@@ -30,7 +30,7 @@
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='sinopsis'>SIPNOSIS</label>";
-                                    echo "<textarea class='form-control'rows='5' id='sinopsis' placeholder='$obj->SINOPSIS' required></textarea>";
+                                    echo "<input type='text' class='form-control' name='sinopsis' value='$obj->SINOPSIS' required>";
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='autor'>AUTOR</label>";
@@ -124,7 +124,7 @@
                     $consulta="UPDATE LIBROS SET
                     `ISBN` =  '$id',
                     `TITULO` =  '$titulo',
-                    `SINOPSIS` =  '$sipnosis',
+                    `SINOPSIS` =  '$sinopsis',
                     `AUTOR` = '$autor',
                     `EDITORIAL` =  '$editorial',
                     `PRECIO` = '$precio',

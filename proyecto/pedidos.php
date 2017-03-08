@@ -12,7 +12,7 @@
                
                     if ($result = $connection->query($query)) {
             ?>
-            <h2><b>PEDIDOS</b></h2>
+            <h2><b>ADMINISTRAR PEDIDOS</b></h2>
              <table class="table" border="3px solid black">
                 <thead>
                 <tr class="info">

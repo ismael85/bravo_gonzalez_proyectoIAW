@@ -11,7 +11,7 @@
                 $query="SELECT * FROM USUARIOS WHERE TIPO_USU!='A' ORDER BY NOMBRE";
                     if ($result = $connection->query($query)) {
             ?>
-            <h2><b>USUARIOS</b></h2><form action='registre_admin.php'>
+            <h2><b>ADMINISTRAR USUARIOS</b></h2><form action='registre_admin.php'>
                         <input type='submit' value='Añadir administrador' /></form>
              <table class="table" border="3px solid black">
                 <thead>

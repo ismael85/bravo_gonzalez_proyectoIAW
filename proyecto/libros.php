@@ -10,7 +10,8 @@
                 $query="SELECT * FROM LIBROS ORDER BY AUTOR";
                     if ($result = $connection->query($query)) {
             ?>
-            <h2><b>LIBROS</b></h2>
+            <h2><b>ADMINISTRAR LIBROS</b></h2><form action='registre_libro.php'>
+                        <input type='submit' value='Añadir libro' /></form>
              <table class="table" border="3px solid black">
                 <thead>
                 <tr class="info">
