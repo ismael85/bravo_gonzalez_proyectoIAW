@@ -37,10 +37,6 @@
                                     echo "<input type='date' class='form-control' name='fechaped' value='$obj->FECH_PED' required>";
                         echo "</div>";
                         echo "<div class='form-group'>";
-                                    echo "<label for='fechaent'>FECHA_ENTREGA</label>";
-                                    echo "<input type='date' class='form-control' name='fechaent' value='$obj->FECH_ENTR' required>";
-                        echo "</div>";
-                        echo "<div class='form-group'>";
                                     echo "<label for='usuario'>USUARIO</label>";
                                     echo "<input type='text' class='form-control' name='usuario' value='$obj->NOM_USU' required readonly>";
                         echo "</div>";
@@ -63,7 +59,6 @@
                     $isbn=$_POST['isbn'];
                     $cantidad=$_POST['cantidad'];
                     $fped=$_POST['fechaped'];
-                    $fent=$_POST['fechaent'];
                     $usuario=$_POST['usuario'];
                     
 
@@ -71,7 +66,6 @@
                     $consulta="UPDATE PEDIDOS SET
                     `ID_PEDIDOS` =  '$id',
                     `FECH_PED` =  '$fped',
-                    `FECH_ENTR` =  '$fent',
                     `NOM_USU` = '$usuario'
                     WHERE `ID_PEDIDOS` ='".$_GET["id"]."'";
                     $consulta2="UPDATE DETALLE_PEDIDOS SET

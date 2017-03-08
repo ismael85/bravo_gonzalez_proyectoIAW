@@ -16,10 +16,12 @@
           
 
         <?php
+        echo "<ol>";     
           //FETCHING OBJECTS FROM THE RESULT SET
           //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT
           while($obj = $result->fetch_object()) {
               //PRINTING EACH ROW
+                
                 echo "<li><h4><a href='lista_genero.php?ID=".$obj->ID_GEN."'>$obj->NOM_GEN</a></h4></li>";    
           }
           echo "</ol>";

@@ -38,7 +38,7 @@
                         echo "<td>".$obj->PRECIO."</td>";
                         echo "<td>".$obj->FECHA_LANZA."</td>";
                         echo "<td>".$obj->ID_GEN."</td>";
-                        echo "<td><img src='./img/editar.jpg' width=50px heigh=50px;/></td>";
+                        echo "<td><form method='get'><a href='editar_libro.php?id=$obj->ISBN'><img src='./img/editar.jpg' width=50px heigh=50px;/></td>";
                         echo "<td><form method='get'><a href='borrar_libro.php?id=$obj->ISBN'><img src='./img/borrar.jpg' width=50px heigh=50px;/></td>";
                        echo "</tr>";
                     echo "</div>";

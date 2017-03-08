@@ -29,7 +29,10 @@
    
         $result = $connection->query($insert);
   	        if (!$result) {
-   		         echo "Datos existentes";
+   		         echo "Datos existentes, introduzca otros valores para el género";
+                 echo "<br><form action='dist_genero.php'>
+                        <input type='submit' value='Volver' />
+                        </form>";
                 
             } else {
               echo "Nuevo género añadido";

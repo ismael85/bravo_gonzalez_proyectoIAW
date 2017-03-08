@@ -60,8 +60,10 @@
    
         $result = $connection->query($insert);
   	        if (!$result) {
-   		         echo "Datos existentes";
-                
+   		           echo "Este usuario administrador ya existe en el sistema, introduzca otro";
+                   echo "<br><form action='usuarios.php'>
+                        <input type='submit' value='Volver' />
+                        </form>";
             } else {
               echo "Nuevo usuario administrador añadido, ya tiene su zona";
                 

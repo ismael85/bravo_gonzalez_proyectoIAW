@@ -21,7 +21,6 @@
                     <th>ISBN</th>
                     <th>CANTIDAD</th>
                     <th>FECHA_PEDIDO</th>
-                    <th>FECHA_ENTREGA</th>
                     <th>USUARIO</th>
                     <th>Editar</th>
                     <th>Borrar</th>
@@ -37,7 +36,6 @@
                         echo "<td>".$obj->ISBN."</td>";
                         echo "<td>".$obj->CANTIDAD."</td>";
                         echo "<td>".$obj->FECH_PED."</td>";
-                        echo "<td>".$obj->FECH_ENTR."</td>";
                         echo "<td>".$obj->NOM_USU."</td>";
                         echo "<td><form method='get'><a href='editar_pedido.php?id=$obj->ID_PEDIDOS'><img src='./img/editar.jpg' width=50px heigh=50px;/></td>";
                         echo "<td><form method='get'><a href='borrar_pedido.php?id=$obj->ID_PEDIDOS'><img src='./img/borrar.jpg' width=50px heigh=50px;/></td>";

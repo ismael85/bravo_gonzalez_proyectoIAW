@@ -28,11 +28,11 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand">LIBRERIA ONLINE BRAVO</a> 
+          <a class="navbar-brand"><h3>LIBRERIA ONLINE BRAVO</h3></a> 
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-brand" role="form">
             <input type="button" value="INICIO"  onClick="location.href='index.php'"/>
-            <input type="button" value="LOS 10 MÁS VENDIDOS"  onClick="location.href='vendidos.php'"/>
+            <input type="button" value="LOS MÁS VENDIDOS"  onClick="location.href='vendidos.php'"/>
             <input type="button" value="CATÁLOGO"  onClick="location.href='catalogo.php'"/>
             <input type="button" value="GÉNEROS"  onClick="location.href='genero.php'"/>       
           </form>
