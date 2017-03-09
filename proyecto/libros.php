@@ -25,6 +25,7 @@
                     <th>GÉNERO</th>
                     <th>Editar</th>
                     <th>Borrar</th>
+                    <th>Editar imagen</th>
                 </tr>
                 </thead>
             <?php
@@ -41,6 +42,7 @@
                         echo "<td>".$obj->ID_GEN."</td>";
                         echo "<td><form method='get'><a href='editar_libro.php?id=$obj->ISBN'><img src='./img/editar.jpg' width=50px heigh=50px;/></td>";
                         echo "<td><form method='get'><a href='borrar_libro.php?id=$obj->ISBN'><img src='./img/borrar.jpg' width=50px heigh=50px;/></td>";
+                        echo "<td><form method='get'><a href='editar_imagen.php?id=$obj->ISBN'><img src='./img/imagen.jpg' width=50px heigh=50px;/></td>";
                        echo "</tr>";
                     echo "</div>";
 

@@ -25,7 +25,7 @@
                         echo "<img src='".$obj->IMG."' width='250px' height='250px'>";
                         echo "<p>Sinopsis: $obj->SINOPSIS</p>";
                         echo "<p>Precio: $obj->PRECIO €</p>";
-                        echo "<a href='carrito.php'><input type='button' value='Añadir al carrito'/></a>";
+                        echo "<a href='comprar.php'><input type='button' value='Comprar'/></a>";
                      echo "</form>";
                     echo "</div>";
               }

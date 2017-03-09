@@ -1,6 +1,9 @@
 <?php
     include ('formato/cabecera_admin.php');
 ?>
+<?php
+    ob_start();
+?>
 <div class="jumbotron">
       <div class="container">
         <div class="row">  
@@ -49,11 +52,6 @@
                                     echo "<input type='date' class='form-control' name='fecha' value='$obj->FECHA_LANZA' required>";
                         echo "</div>";
                         echo "<div class='form-group'>";
-                                    echo "<label for='imagen'>Adjuntar una imagen</label>";
-                                    echo "<input type='file' class='form-control' name='imagen' value='$obj->IMG' required>";
-                                    echo "<p class='help-block'>Selecciona una imagen de producto.</p>";
-                        echo "</div>";
-                        echo "<div class='form-group'>";
                                     echo "<label for='id_gen'>ID_GEN</label>";
                                     echo "<input type='text' class='form-control' name='id_gen' value='$obj->ID_GEN' required readonly>";
                         echo "</div>";
@@ -66,44 +64,7 @@
 
                         } //Cierre del  result de la consulta 
                    
-                     //Temp file. Where the uploaded file is stored temporary
-                        $tmp_file = $_FILES['IMG']['tmp_name'];
-
-                        //Dir where we are going to store the file
-                        $target_dir = "img/";
-
-                        //Full name of the file.
-                        $target_file = strtolower($target_dir . basename($_FILES['IMG']['name']));
-
-                        //Can we upload the file
-                        $valid = true;
-
-                        //Check if the file already exists
-                        if (file_exists($target_file)) {
-                            echo "Ya existe este archivo.";
-                            $valid = false;
-                        }
-
-                        //Chequeamos que la imagen sea menor de 2MB
-                        if($_FILES['IMG']['size'] > (2048000)) {
-                            $valid = false;
-                       echo 'El tamaño de la imagen es muy grande, solo se admite 2MB.';
-                        }
-
-                        //Chequeamos la extensión que va a tener nuestra imagen
-                        $file_extension = pathinfo($target_file, PATHINFO_EXTENSION); // Nosotros se ponemos las                                                                      extensiones que solo se pueden usar.
-                        if ($file_extension != "jpg" &&
-                            $file_extension != "jpeg" &&
-                            $file_extension != "png" &&
-                            $file_extension != "gif") {
-                            $valid = false;
-                            echo "Solo se admiten las extensiones JPG,JPEG,PNG y GIF";
-                        }
-
-                        if ($valid) {
-                            //Put the file in its place
-                            move_uploaded_file($tmp_file, $target_file);
-                        }
+                    
                     } //Cierre $_GET
 
                       if (isset($_POST['id'])) {
@@ -116,9 +77,9 @@
                     $editorial=$_POST['editorial'];
                     $precio=$_POST['precio'];
                     $fecha=$_POST['fecha'];
-                    $imagen=$_POST['imagen'];
                     $id_gen=$_POST['id_gen'];
-                  
+                    
+                     
 
                     //consulta
                     $consulta="UPDATE LIBROS SET
@@ -129,7 +90,6 @@
                     `EDITORIAL` =  '$editorial',
                     `PRECIO` = '$precio',
                     `FECHA_LANZA` =  '$fecha',
-                    `IMG` =  '$target_file',
                     `ID_GEN` =  '$id_gen'
                     WHERE  `ISBN` ='".$_GET["id"]."'";
 
