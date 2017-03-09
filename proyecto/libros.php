@@ -18,6 +18,7 @@
                     
                     <th>ISBN</th>
                     <th>TÍTULO</th>
+                    <th>IMAGEN</th>
                     <th>AUTOR</th>
                     <th>EDITORIAL</th>
                     <th>PRECIO</th>
@@ -35,6 +36,7 @@
                        echo "<tr class='info'>";
                         echo "<td>".$obj->ISBN."</td>";
                         echo "<td>".$obj->TITULO."</td>";
+                        echo "<td><img src='".$obj->IMG."' width='80px' height='80px'>"."</td>";
                         echo "<td>".$obj->AUTOR."</td>";
                         echo "<td>".$obj->EDITORIAL."</td>";
                         echo "<td>".$obj->PRECIO."</td>";

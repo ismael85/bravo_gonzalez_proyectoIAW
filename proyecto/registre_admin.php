@@ -29,7 +29,7 @@
                                 placeholder="Introduzca su dirección" required></b></p>
             </div>
             <div class="form-group">
-            <p><b>CP: <input type="cp" class="form-control" name="cp" maxlength="5"  
+            <p><b>CP: <input type="cp" min="01000" class="form-control" name="cp" maxlength="5"  
                                 placeholder="Introduzca su cp" required></b></p>
             </div>
             <div class="form-group">

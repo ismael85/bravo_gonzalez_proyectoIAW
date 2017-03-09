@@ -33,7 +33,7 @@
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='sinopsis'>SIPNOSIS</label>";
-                                    echo "<input type='text' class='form-control' name='sinopsis' value='$obj->SINOPSIS' required>";
+                                    echo "<textarea rows='5' class='form-control' name='sinopsis' required>.$obj->SINOPSIS.</textarea>";
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='autor'>AUTOR</label>";
@@ -45,7 +45,7 @@
                         echo "</div>";    
                         echo "<div class='form-group'>";
                                     echo "<label for='precio'>PRECIO</label>";
-                                    echo "<input type='number' class='form-control' name='precio' maxlength='3' value='$obj->PRECIO' required>";
+                                    echo "<input type='number' class='form-control' name='precio' maxlength='2' value='$obj->PRECIO' required>";
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='fecha'>FECHA PUBLICACIÓN</label>";

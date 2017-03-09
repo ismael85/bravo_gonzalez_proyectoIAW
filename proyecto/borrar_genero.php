@@ -23,7 +23,7 @@
                        }
                         mysqli_error($connection);
                 }
-                 //boton para volver a la página principal.
+                 //boton para volver a la página anterior.
                   echo "<br><form action='dist_genero.php'>
                         <input type='submit' value='Volver' />
                         </form>";

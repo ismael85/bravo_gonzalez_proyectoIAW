@@ -42,7 +42,7 @@
                         echo "</div>";    
                         echo "<div class='form-group'>";
                                     echo "<label for='cp'>CP</label>";
-                                    echo "<input type='cp' class='form-control' name='cp' maxlength='5' value='$obj->COD_POSTAL' required>";
+                                    echo "<input type='cp'  min='01000' class='form-control' name='cp' maxlength='5' value='$obj->COD_POSTAL' required>";
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='loca'>LOCALIDAD</label>";

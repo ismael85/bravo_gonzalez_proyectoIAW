@@ -30,7 +30,7 @@
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='cantidad'>CANTIDAD</label>";
-                                    echo "<input type='number' class='form-control' name='cantidad' value='$obj->CANTIDAD' required>";
+                                    echo "<input type='number' min='1' class='form-control' name='cantidad' value='$obj->CANTIDAD' required>";
                         echo "</div>";
                         echo "<div class='form-group'>";
                                     echo "<label for='fechaped'>FECHA_PEDIDO</label>";
