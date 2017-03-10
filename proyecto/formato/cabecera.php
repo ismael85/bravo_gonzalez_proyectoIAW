@@ -45,7 +45,7 @@
                   echo "<a href='login.php'><input type='button' value='INICIAR SESIÓN'/></a>";
                   echo "<a href='registre.php'><input type='button' value='REGISTRATE'/></a>";
                }                                                                 
-               else {//Si a iniciado algún usuario registrado que le de la bienvenido al nom_usu y le aparezca el a su vez el           botón desconectar
+               else {//Si a iniciado algún usuario registrado que le de la bienvenido al nom_usu y le aparezca  a su vez        el botón desconectar
                     echo "<input type='button' value='BIENVENID@ {$_SESSION['nom_usu']}'/>";
                    echo "<a href='cerrar_session.php'><input type='button' value='DESCONECTAR'/></a>";
                }

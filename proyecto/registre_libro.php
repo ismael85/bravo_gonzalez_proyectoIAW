@@ -17,7 +17,7 @@
                                 placeholder="Introduzca titulo" required></b></p>
             </div>
             <div class="form-group">
-            <p><b>SINOPSIS: <textarea rows="5" class="form-control" name="sinopsis"  
+            <p><b>SINOPSIS: <textarea rows="3" class="form-control" name="sinopsis"  
                                       placeholder="Introduzca sinopsis" required></textarea></b></p>
             </div>
             <div class="form-group">
@@ -34,15 +34,25 @@
             </div>
             <div class="form-group">
             <p><b>FECHA LANZAMIENTO: <input type="date" class="form-control" name="fecha"  
-                                placeholder="Introduzca YYYY-MM-" required></b></p>
+                                placeholder="Introduzca YYYY-MM-DD" required></b></p>
             </div>
             <div class='form-group'>
-            <label for='imagen'>Adjuntar una imagen</label>
+            <label for='imagen'><p><b>ADJUNTAR UNA IMAGEN</b></p></label>
             <input type="file" class="form-control" name="imagen" required>
             <p class="help-block">Selecciona una imagen de producto.</p>
             </div>
             <div class="form-group">
-            <p><b>GÉNERO: <input type="text" class="form-control" name="genero" placeholder="Introduzca siglas genero" required></b></p>
+            <label><p><b>SELECCIONA GENERO</b></p></label><br>
+            <select name="genero" required>
+                <option value="ERO">ERO</option>
+                <option value="FICC">FICC</option>
+                <option value="HIST">HIST</option>
+                <option value="INF">INF</option>
+                <option value="JUV">JUV</option>
+                <option value="POL">POL</option>
+                <option value="ROM">ROM</option>
+                <option value="TERR">TERR</option>
+            </select>
             </div>
             
             <button type="submit" class="btn btn-default">Enviar</button>

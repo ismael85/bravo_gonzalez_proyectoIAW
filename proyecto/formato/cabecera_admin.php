@@ -43,7 +43,7 @@
           <form class="navbar-form navbar-right" role="form">
             <?php
               
-                if ($_SESSION["tipo_usu"]=="A") {//Si a iniciado sesión como un usuario tipo administrador que le aparezca un                                   saludo y el botón de desconectar
+                if ($_SESSION["tipo_usu"]=="A") {//Si a iniciado sesión como un usuario tipo administrador que le                                           aparezca un saludo y el botón de desconectar
                   echo "<input type='button' value='Hola Administrador'/>";
                    echo "<a href='cerrar_session.php'><input type='button' value='DESCONECTAR'/></a>";
                }                                                                 
