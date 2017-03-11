@@ -36,7 +36,7 @@
                     echo "</p>";
                     echo "<img src='".$obj->IMG."' width='250px' height='250px'>";
                     echo "<p>$obj->PRECIO €</p>";
-                    echo "<a href='comprar.php'><input type='button' value='Comprar'/></a>";
+                    echo "<a href='comprar.php?isbn=".$obj->ISBN."'><input type='button' value='Comprar'/></a>";
                  echo "</form>";
                 echo "</div>";
           }//Cierre while
