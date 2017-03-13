@@ -7,7 +7,7 @@
         <div class="row">           
             <?php
                include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php
-                $query="SELECT * FROM GENERO ORDER BY NOM_GEN";
+                $query="SELECT * FROM genero ORDER BY NOM_GEN";
                     if ($result = $connection->query($query)) {
             ?>
              <h2><b>ADMINISTRAR GÉNEROS</b></h2><form action='registre_genero.php'>

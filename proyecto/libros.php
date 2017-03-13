@@ -7,7 +7,7 @@
         <div class="row">           
             <?php
                include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php
-                $query="SELECT * FROM LIBROS ORDER BY AUTOR";
+                $query="SELECT * FROM libros ORDER BY AUTOR";
                     if ($result = $connection->query($query)) {
             ?>
             <h2><b>ADMINISTRAR LIBROS</b></h2><form action='registre_libro.php'>

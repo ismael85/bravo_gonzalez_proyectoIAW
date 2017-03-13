@@ -66,7 +66,7 @@
                                 placeholder="Introduzca su dirección" required></b></p>
             </div>
             <div class="form-group">
-            <p><b>CP: <input type="cp" class="form-control" name="cp" maxlength="5"  
+            <p><b>CP: <input type="cp" class="form-control" name="cp" min="5" maxlength="5"  
                                 placeholder="Introduzca su cp" required></b></p>
             </div>
             <div class="form-group">
@@ -78,7 +78,7 @@
                                 placeholder="Introduzca su provincia" required></b></p>
             </div>
             <div class="form-group">
-            <p><b>Telefono: <input type="tel" class="form-control" name="tlf" maxlength="9"
+            <p><b>Telefono: <input type="tel" class="form-control" name="tlf" min="9" maxlength="9"
                                 placeholder="Introduzca nº de teléfono" required></b></p>
             </div>
             <div class="form-group">
@@ -92,7 +92,7 @@
         <?php else: ?>
         <?php
             include ('conexion_bd/conexion.php');
-        $insert="INSERT INTO USUARIOS VALUES ('".$_POST['usu']."',md5('".$_POST['pass']."'),'".$_POST['name']."','".$_POST['apell']."','".$_POST['dire']."','".$_POST['cp']."','".$_POST['loca']."','".$_POST['provi']."','".$_POST['tlf']."','".$_POST['email']."','C')";
+        $insert="INSERT INTO usuarios VALUES ('".$_POST['usu']."',md5('".$_POST['pass']."'),'".$_POST['name']."','".$_POST['apell']."','".$_POST['dire']."','".$_POST['cp']."','".$_POST['loca']."','".$_POST['provi']."','".$_POST['tlf']."','".$_POST['email']."','C')";
 
    
         $result = $connection->query($insert);

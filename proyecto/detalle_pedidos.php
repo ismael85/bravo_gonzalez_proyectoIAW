@@ -7,7 +7,7 @@
         <div class="row">           
             <?php
                include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php
-                $query="SELECT * FROM DETALLE_PEDIDOS ORDER BY ID_PEDIDOS";
+                $query="SELECT * FROM detalle_pedidos ORDER BY ID_PEDIDOS";
                     if ($result = $connection->query($query)) {
             ?>
             <h2><b>DETALLE_PEDIDOS</b></h2>

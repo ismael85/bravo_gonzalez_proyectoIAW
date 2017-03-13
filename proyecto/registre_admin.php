@@ -55,7 +55,7 @@
         <?php else: ?>
         <?php
             include ('conexion_bd/conexion.php');
-        $insert="INSERT INTO USUARIOS VALUES ('".$_POST['usu']."',md5('".$_POST['pass']."'),'".$_POST['name']."','".$_POST['apell']."','".$_POST['dire']."','".$_POST['cp']."','".$_POST['loca']."','".$_POST['provi']."','".$_POST['tlf']."','".$_POST['email']."','A')";
+        $insert="INSERT INTO usuarios VALUES ('".$_POST['usu']."',md5('".$_POST['pass']."'),'".$_POST['name']."','".$_POST['apell']."','".$_POST['dire']."','".$_POST['cp']."','".$_POST['loca']."','".$_POST['provi']."','".$_POST['tlf']."','".$_POST['email']."','A')";
 
    
         $result = $connection->query($insert);

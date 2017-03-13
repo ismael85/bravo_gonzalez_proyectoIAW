@@ -13,7 +13,7 @@
           include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php
           //MAKING A SELECT QUERY
           /* Consultas de selección que devuelven un conjunto de resultados */
-            $query="SELECT ISBN, SUM(CANTIDAD), TITULO, AUTOR,IMG, PRECIO FROM DETALLE_PEDIDOS JOIN LIBROS USING (ISBN) GROUP BY ISBN ORDER BY SUM(CANTIDAD) DESC LIMIT 5"; 
+            $query="SELECT ISBN, SUM(CANTIDAD), TITULO, AUTOR,IMG, PRECIO FROM detalle_pedidos JOIN libros USING (ISBN) GROUP BY ISBN ORDER BY SUM(CANTIDAD) DESC LIMIT 5"; 
 
           if ($result = $connection->query($query)) {
 

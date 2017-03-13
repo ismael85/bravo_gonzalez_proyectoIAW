@@ -11,7 +11,7 @@
                 include ('conexion_bd/conexion.php');
 
 
-                        if ($result = $connection->query("SELECT * FROM PEDIDOS JOIN DETALLE_PEDIDOS USING (ID_PEDIDOS) WHERE ID_PEDIDOS='".$_GET['id']."';")) { 
+                        if ($result = $connection->query("SELECT * FROM pedidos JOIN detalle_pedidos USING (ID_PEDIDOS) WHERE ID_PEDIDOS='".$_GET['id']."';")) { 
 
 
 
@@ -63,12 +63,12 @@
                     
 
                     //consulta
-                    $consulta="UPDATE PEDIDOS SET
+                    $consulta="UPDATE pedidos SET
                     `ID_PEDIDOS` =  '$id',
                     `FECH_PED` =  '$fped',
                     `NOM_USU` = '$usuario'
                     WHERE `ID_PEDIDOS` ='".$_GET["id"]."'";
-                    $consulta2="UPDATE DETALLE_PEDIDOS SET
+                    $consulta2="UPDATE detalle_pedidos SET
                     `ISBN` =  '$isbn', 
                     `ID_PEDIDOS` =  '$id',
                     `CANTIDAD` =  '$cantidad'

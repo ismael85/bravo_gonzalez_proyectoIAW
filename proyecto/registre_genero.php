@@ -24,7 +24,7 @@
         <?php else: ?>
         <?php
             include ('conexion_bd/conexion.php');
-        $insert="INSERT INTO GENERO VALUES ('".$_POST['id']."','".$_POST['nom_gen']."')";
+        $insert="INSERT INTO genero VALUES ('".$_POST['id']."','".$_POST['nom_gen']."')";
 
    
         $result = $connection->query($insert);

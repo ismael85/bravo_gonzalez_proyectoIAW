@@ -9,7 +9,7 @@
         <?php
           include ('conexion_bd/conexion.php');
             /* Consultas de selección que devuelven un conjunto de resultados */
-            $query="SELECT * FROM LIBROS ORDER BY TITULO";
+            $query="SELECT * FROM libros ORDER BY TITULO";
           if ($result = $connection->query($query)) {
           
         ?>
@@ -19,7 +19,7 @@
           while($obj = $result->fetch_object()) {
               //PRINTING EACH ROW
             echo "<div class='col-md-4'>";
-             echo "<form class='navbar-form navbar-right' role='form'>";
+             echo "<form method='post' class='navbar-form navbar-right' role='form'>";
                 echo "<h4><b><a href='detalle_producto.php?isbn=".$obj->ISBN."'>";
                     $titulo = $obj->TITULO;
                         if(strlen($titulo) > 18)

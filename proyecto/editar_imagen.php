@@ -12,7 +12,7 @@
                 include ('conexion_bd/conexion.php');
 
 
-                        if ($result = $connection->query("SELECT * FROM LIBROS WHERE ISBN='".$_GET['id']."';")) { 
+                        if ($result = $connection->query("SELECT * FROM libros WHERE ISBN='".$_GET['id']."';")) { 
 
 
 
@@ -85,7 +85,7 @@
                   
 
                     //consulta
-                    $consulta="UPDATE LIBROS SET
+                    $consulta="UPDATE libros SET
                     `IMG` =  '$target_file'
                     WHERE  `ISBN` ='".$_GET["id"]."'";
 

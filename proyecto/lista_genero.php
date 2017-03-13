@@ -12,7 +12,7 @@
             
           //MAKING A SELECT QUERY
           /* Consultas de selección que devuelven un conjunto de resultados */
-            $query="SELECT * FROM LIBROS WHERE ID_GEN='".$_GET['ID']."' ORDER BY TITULO" ;
+            $query="SELECT * FROM libros WHERE ID_GEN='".$_GET['ID']."' ORDER BY TITULO" ;
           if ($result = $connection->query($query)) {
           //FETCHING OBJECTS FROM THE RESULT SET
           //THE LOOP CONTINUES WHILE WE HAVE ANY OBJECT (Query Row) LEFT

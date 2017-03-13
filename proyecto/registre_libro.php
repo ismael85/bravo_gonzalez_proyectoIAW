@@ -106,7 +106,7 @@
 
                         include ('conexion_bd/conexion.php');
 
-                        $insert="INSERT INTO LIBROS VALUES ('".$_POST['id']."','".$_POST['titulo']."','".$_POST['sinopsis']."','".$_POST['autor']."','".$_POST['editorial']."','".$_POST['precio']."','".$_POST['fecha']."','$target_file','".$_POST['genero']."')";
+                        $insert="INSERT INTO libros VALUES ('".$_POST['id']."','".$_POST['titulo']."','".$_POST['sinopsis']."','".$_POST['autor']."','".$_POST['editorial']."','".$_POST['precio']."','".$_POST['fecha']."','$target_file','".$_POST['genero']."')";
 
 
                         $result = $connection->query($insert);

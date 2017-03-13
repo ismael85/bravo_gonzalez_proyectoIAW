@@ -10,9 +10,9 @@
                 //Transformamos el array recibido en un único numero, que será el IdReparacion
                 $id = $_GET['id'];
                   //Comprobamos que la reparacion existe.
-                  if ($result = $connection->query("SELECT * FROM LIBROS WHERE ISBN='".$_GET['id']."';")) {
-                    if ($result2 = $connection->query("DELETE FROM DETALLE_PEDIDOS WHERE ISBN='".$_GET['id']."';")) {
-                      if ($result2 = $connection->query("DELETE FROM LIBROS WHERE ISBN='".$_GET['id']."';")) {
+                  if ($result = $connection->query("SELECT * FROM libros WHERE ISBN='".$_GET['id']."';")) {
+                    if ($result2 = $connection->query("DELETE FROM detalle_pedidos WHERE ISBN='".$_GET['id']."';")) {
+                      if ($result2 = $connection->query("DELETE FROM libros WHERE ISBN='".$_GET['id']."';")) {
                           echo "El libro $id ha sido borrado.<br>";
                         } else {
                             mysqli_error($connection);

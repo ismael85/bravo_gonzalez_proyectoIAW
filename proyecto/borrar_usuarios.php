@@ -10,9 +10,9 @@
                 //Transformamos el array recibido en un único numero, que será el IdReparacion
                 $id = $_GET['id'];
                   //Comprobamos que la reparacion existe.
-                  if ($result = $connection->query("SELECT * FROM USUARIOS WHERE NOM_USU='".$_GET['id']."';")) {
-                    if ($result2 = $connection->query("DELETE FROM PEDIDOS WHERE NOM_USU='".$_GET['id']."';")) {
-                      if ($result2 = $connection->query("DELETE FROM USUARIOS WHERE NOM_USU='".$_GET['id']."';")) {
+                  if ($result = $connection->query("SELECT * FROM usuarios WHERE NOM_USU='".$_GET['id']."';")) {
+                    if ($result2 = $connection->query("DELETE FROM pedidos WHERE NOM_USU='".$_GET['id']."';")) {
+                      if ($result2 = $connection->query("DELETE FROM usuarios WHERE NOM_USU='".$_GET['id']."';")) {
                           echo "El usuario $id ha sido borrado.<br>";
                         } else {
                             mysqli_error($connection);

@@ -15,7 +15,7 @@
               include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php 
 
                 /* Consulta que devuelve los libros más nuevos desde comienzos de año */
-                $query="SELECT * FROM LIBROS WHERE FECHA_LANZA > '2017-01-01'";
+                $query="SELECT * FROM libros WHERE FECHA_LANZA > '2017-01-01'";
                     if ($result = $connection->query($query)) {
             ?>
             <?php

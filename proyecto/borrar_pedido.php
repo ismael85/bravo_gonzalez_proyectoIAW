@@ -10,9 +10,9 @@
                 //Transformamos el array recibido en un único numero, que será el IdReparacion
                 $id = $_GET['id'];
                   //Comprobamos que la reparacion existe.
-                  if ($result = $connection->query("SELECT * FROM PEDIDOS WHERE ID_PEDIDOS='".$_GET['id']."';")) {
-                    if ($result2 = $connection->query("DELETE FROM DETALLE_PEDIDOS WHERE ID_PEDIDOS='".$_GET['id']."';")) {
-                      if ($result2 = $connection->query("DELETE FROM PEDIDOS WHERE ID_PEDIDOS='".$_GET['id']."';")) {
+                  if ($result = $connection->query("SELECT * FROM pedidos WHERE ID_PEDIDOS='".$_GET['id']."';")) {
+                    if ($result2 = $connection->query("DELETE FROM detalle_pedidos WHERE ID_PEDIDOS='".$_GET['id']."';")) {
+                      if ($result2 = $connection->query("DELETE FROM pedidos WHERE ID_PEDIDOS='".$_GET['id']."';")) {
                           echo "El pedido $id ha sido borrado.<br>";
                         } else {
                             mysqli_error($connection);

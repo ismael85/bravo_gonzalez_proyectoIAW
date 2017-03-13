@@ -11,7 +11,7 @@
                 include ('conexion_bd/conexion.php');
 
 
-                        if ($result = $connection->query("SELECT * FROM USUARIOS WHERE NOM_USU='".$_GET['id']."';")) { 
+                        if ($result = $connection->query("SELECT * FROM usuarios WHERE NOM_USU='".$_GET['id']."';")) { 
 
 
 
@@ -92,7 +92,7 @@
                     $tipo=$_POST['tipo'];
 
                     //consulta
-                    $consulta="UPDATE USUARIOS SET
+                    $consulta="UPDATE usuarios SET
                     `NOM_USU` =  '$id',
                     `PASSWORD` =  md5('$pass'),
                     `NOMBRE` =  '$nombre',

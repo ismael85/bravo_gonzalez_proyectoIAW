@@ -8,7 +8,7 @@
             
             <?php
                include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php
-                $query="SELECT * FROM USUARIOS WHERE TIPO_USU!='A' ORDER BY NOMBRE";
+                $query="SELECT * FROM usuarios WHERE TIPO_USU!='A' ORDER BY NOMBRE";
                     if ($result = $connection->query($query)) {
             ?>
             <h2><b>ADMINISTRAR USUARIOS</b></h2><form action='registre_admin.php'>

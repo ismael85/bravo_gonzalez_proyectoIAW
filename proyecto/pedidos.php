@@ -8,7 +8,7 @@
             
             <?php
              include ('conexion_bd/conexion.php');//Introduce el contenido de esta pagina en index.php  
-                $query="SELECT * FROM PEDIDOS JOIN DETALLE_PEDIDOS USING (ID_PEDIDOS) JOIN LIBROS USING (ISBN) ORDER BY ID_PEDIDOS";
+                $query="SELECT * FROM pedidos JOIN detalle_pedidos USING (ID_PEDIDOS) JOIN libros USING (ISBN) ORDER BY ID_PEDIDOS";
                
                     if ($result = $connection->query($query)) {
             ?>
